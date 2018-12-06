@@ -23,23 +23,28 @@
 					<div class="query_body">
 						<div class="row">
 							<div class="col-lg-12">
+							<?php echo form_open('site/add_inquiry'); ?>
 							<ul class="query_box">
 							<li>
-								<input class="form-control" placeholder="Name" type="text" name="name">
+								<input class="form-control" placeholder="Name" type="text" name="name" required="required">
 							</li>
 							<li>
-								<input class="form-control" placeholder="Email Address" type="text" name="email">
+								<input class="form-control" placeholder="Email Address" type="text" name="email" required="required">
 							</li>
 							<li>
 								<input class="form-control" placeholder="Subject" type="text" name="subject">
 							</li>
 							<li>
-								<textarea  class="form-control"  type="text" name="message">Message</textarea>
+								<textarea  class="form-control"  type="text" name="message" required="required">Message</textarea>
+							</li>
+							<li class="text-success">
+							<?php echo	$this->session->flashdata('success_contact'); ?>
 							</li>
 							<li class="text-right">
 								<button class="btn btn_tu_blue" type="submit">Send</button>
 							</li>
 						</ul>
+							<?php form_close(); ?>
 					</div>
 						</div>
 					</div>
