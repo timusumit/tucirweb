@@ -18,8 +18,10 @@
 			<div class="col-lg-4">
 				<div class="map_wrap">
 					<h4 class="foot_title_under">Our Location</h4>
-					<div class="map_box">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.2381639118134!2d85.28747351506146!3d27.6790329828037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1814d1ca2ac9%3A0xd5d0340b92e34c99!2sTU+Rd%2C+Kirtipur+44600!5e0!3m2!1sen!2snp!4v1543761407915" width="340" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<div class="map_box" style="max-height: 200px;">
+					<?php foreach($contact_setup as $csdata): ?>
+					<?php echo $csdata['map_plugin'] ?>
+					<?php endforeach;?>
 					</div>
 				</div>
 			</div>
@@ -28,9 +30,11 @@
 					<h4 class="bg_btn no_btm_margin">Contact Us</h4>
 					<div class="contact_box">
 					<ul class="contact_foot_link">
-						<li>Kirtupur-5, Kathmandu</li>
-						<li>info@tucir.edu.np</li>
-						<li>+9779841236547, 01445236</li>
+						<?php foreach($contact_setup as $csdata): ?>
+							<li><?php echo $csdata['address'] ?></li>
+							<li><?php echo $csdata['phone'] ?></li>
+							<li><?php echo $csdata['email'] ?></li>
+						<?php endforeach; ?>
 					</ul>
 					<ul class="social_links">
 						<li><a href=""><i class="fab fa-facebook-f"></i></a></li>

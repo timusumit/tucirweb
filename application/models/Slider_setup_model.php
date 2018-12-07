@@ -9,6 +9,7 @@ class Slider_setup_model extends CI_Model {
 
      public function set_slider_name($slider_id = 0,$file_name,$full_path)
     {
+       // echo "here";exit;
 
              $this->load->helper('url');
  

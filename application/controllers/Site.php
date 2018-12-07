@@ -11,11 +11,14 @@ public function __construct()
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->model('inquiry_model');
+        $this->load->model('contact_setup_model');
+        $this->load->model('create_page_model');
     }
 
 	
 
 	public function display($view,$data){
+		$data['contact_setup']=$this->contact_setup_model->get_contact();
 		$this->load->view('site_templates/header.php');
 		$this->load->view('site_templates/navigation.php');
 		$this->load->view($view,$data);
@@ -26,12 +29,13 @@ public function __construct()
 	public function index()
 	{
 		$data['page_description']='Home';
-
+	/*	$data['contact_setup']=$this->contact_setup_model->get_contact();*/
 		$this->display('home',$data);
 	}
 
 	public function contact(){
 		$data['page_description']='Concat Us';
+		/*$data['contact_setup']=$this->contact_setup_model->get_contact();*/
 		$this->display('pages/contact',$data);
 	}
 
@@ -40,5 +44,11 @@ public function __construct()
    	$this->session->set_flashdata('success_contact', 'Message Send Successfully.');
     redirect('site/contact');
 
+	}
+	public function page()
+
+	{
+		$data['create_page']=$this->create_page_model->get_page_content();
+		$this->display('site/page',$data);
 	}
 }

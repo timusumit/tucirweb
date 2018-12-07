@@ -4,22 +4,34 @@
 		<div class="section_gap">
 		<div class="row ">
 			<div class="col">
-				<figure class="map-box">
-					<h3>Our Location</h3>
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.221665204319!2d85.27996371453769!3d27.67954303332133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19b93f62cc6b%3A0xc76cb489769bb372!2sMaster&#39;s+In+International+Relations+and+Diplomacy%2C+Tribhuvan+University!5e0!3m2!1sen!2snp!4v1543935279830" width="540" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-				</figure>
-			</div>
-			<div class="col">
 				<article class="contact_details">
 					<h3>Contact Us</h3>
 					<ul class="contact_list">
-						<li><h5>Kirtipur, Kathmandu, Nepal</h5></li>
+						<?php foreach($contact_setup as $csdata): ?>
+							<li><h5><?php echo $csdata['address'] ?></h5></li>
+							<li><h5>Phone No.:&nbsp;<?php echo $csdata['phone'] ?></h5></li>
+							<li><h5>Email:&nbsp;<?php echo $csdata['email'] ?></h5></li>
+						<?php endforeach; ?>
+						<!-- <li><h5>Kirtipur, Kathmandu, Nepal</h5></li>
 						<li><h5>Phone No.: 9874563210, 9863254170</h5></li>
-						<li><h5>Email:info@tucir.edu.np</h5></li>
+						<li><h5>Email:info@tucir.edu.np</h5></li> -->
 					</ul>					
 				</article>
+				<figure class="map-box">
+					<h3>Our Location</h3>
+					
+					<div class="col-lg-12 pad_fix" style="overflow: hidden;">
+					<?php foreach($contact_setup as $csdata): ?>
+					<?php echo $csdata['map_plugin'] ?>
+					<?php endforeach;?>
+				
+			</div>
+				</figure>
+			</div>
+			<div class="col">
+				
 				<aside class="query_wrap">
-					<h3 class="bg_btn">Have any query?</h3>
+					<h3 class="bg_btn mar_top_fix">Have any query?</h3>
 					<div class="query_body">
 						<div class="row">
 							<div class="col-lg-12">

@@ -28,7 +28,7 @@ public function do_upload()
                 {
 
                         $error = array('error' => $this->upload->display_errors());
-                 //    echo "i am still here"; exit;
+                 //   echo "i am still here"; exit;
                         redirect('admin/slider_setup', $error);
 
                 }
