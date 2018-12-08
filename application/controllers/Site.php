@@ -13,14 +13,17 @@ public function __construct()
         $this->load->model('inquiry_model');
         $this->load->model('contact_setup_model');
         $this->load->model('create_page_model');
+        $this->load->model('menu_setup_model');
     }
 
 	
 
 	public function display($view,$data){
 		$data['contact_setup']=$this->contact_setup_model->get_contact();
+		$data['menu_setup']=$this->menu_setup_model->get_page_from_menu();
+	 	$data['submenu']=$this->menu_setup_model->get_submenu_page();
 		$this->load->view('site_templates/header.php');
-		$this->load->view('site_templates/navigation.php');
+		$this->load->view('site_templates/navigation.php',$data);
 		$this->load->view($view,$data);
 		$this->load->view('site_templates/footer.php');
 

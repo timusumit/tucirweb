@@ -18,6 +18,7 @@
                       <tr>
         								 <th width="40%">Menu Name</th><th width="15%">Page Id</th><th width="15%">Menu Order</th><th width="15%">Action</th>
         							</tr>
+                      
         						</thead>
         						<tbody>
         						<?php  foreach ($menu_setup as $key=>$data):?>	
@@ -55,6 +56,7 @@
     			<span class="input-group-text">Select Page</span>
   			</div>
   		<select class="form-control" name="ms_page_id" id="ms_page_id">
+        <option>Select This For Parent Menu</option>
       <?php foreach($create_page as $key=>$cpdata): ?>
         <option value="<?php echo $cpdata['page_id'] ?>"><?php echo $cpdata['page_title'] ?></option>
       <?php endforeach; ?>
@@ -73,6 +75,15 @@
         </div>
         <input type="text"  class="form-control" name="ms_order" id="ms_order" >
     </div>
+
+
+   <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Will it have Sub menu?</span>
+        </div>
+        <input type="checkbox"  class="form-control" name="ms_has_sub" id="ms_has_sub" value="1" >
+    </div>
+
        </div>
       </div>
       <div class="modal-footer">

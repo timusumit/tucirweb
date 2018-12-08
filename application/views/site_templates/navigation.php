@@ -12,9 +12,34 @@
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url(); ?>">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      
+      <?php foreach($menu_setup as $data): ?>
+      <li class="nav-item <?php if($data['ms_has_sub']==1) echo "dropdown" ?>">
+
+        <a class="nav-link <?php if($data['ms_has_sub']==1) echo "dropdown-toggle" ?>" data-toggle="<?php if($data['ms_has_sub']==1) echo "dropdown" ?>" href="<?php echo base_url('site/page/'.$data['slug']); ?>"><?php echo $data['ms_title'] ?></a>
+<?php if($data['ms_has_sub']==1){ ?>
+        <div class="dropdown-menu">
+
+        <?php foreach($submenu as $key=>$sm):?>
+          
+        <?php if($data['ms_id']==$sm['sms_ms_id']){ ?>
+          
+            <a class="dropdown-item" href="<?php echo base_url('site/page/'.$sm['slug']); ?>"><?php echo $sm['sms_title'] ?>
+            </a>
+          
+        <?php } ?>
+
+
+        <?php endforeach; ?>
+
+        </div>
+
+      <?php }?>
+
+
       </li>
+      
+<?php endforeach;?>   
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
