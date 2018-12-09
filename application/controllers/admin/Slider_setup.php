@@ -24,6 +24,11 @@ public function do_upload()
                 $this->load->library('upload', $config);
                 $file=$this->upload->do_upload('userfile');
 
+
+                $uploadedImage = $this->upload->data();
+   //    echo $uploadedImage['file_name'];exit;
+        $this->resizeImage($uploadedImage['file_name']);
+
                 if ( ! $file )
                 {
 
@@ -133,6 +138,42 @@ public function index(){
 	$data['titlename']=$this->user_model->get_logged_user();
 	$this->display('admin/slider_setup',$data);
 }
+
+
+ public function resizeImage($filename)
+   {
+   // echo "here";exit;
+      $source_path = $_SERVER['DOCUMENT_ROOT'] . '/tucirweb/site_assets/uploads/slider/'. $filename;
+    //  echo $source_path;exit;
+      $target_path = $_SERVER['DOCUMENT_ROOT'] . '/tucirweb/site_assets/uploads/slider/'.$filename;
+    //  echo $target_path;exit;
+      $config_manip = array(
+          'image_library' => 'gd2',
+          'source_image' => $source_path,
+          'new_image' => $target_path,
+          'maintain_ratio' => TRUE,
+          'create_thumb' => TRUE,
+          'thumb_marker' => '',
+          'width' => 1350,
+          'height' => 500
+      );
+  //  print_r($config_manip);exit;
+
+
+      $this->load->library('image_lib', $config_manip);
+      /*echo "here";exit;*/
+   //   $this->image_lib->resize();
+      if (!$this->image_lib->resize()) {
+          echo $this->image_lib->display_errors();
+      }
+
+
+     $this->image_lib->clear();
+   }
+
+
+
+
 
 /* write above here */
 }

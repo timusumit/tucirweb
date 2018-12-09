@@ -51,6 +51,15 @@
       <div class="modal-body">
        <div class="col-lg-12">
        	<div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Post Type</span>
+        </div>
+        <select class="form-control" name="post_type">
+          <option value="news">News</option>
+          <option value="events">Events</option>
+        </select>
+    </div>
+        <div class="input-group mb-3">
   			<div class="input-group-prepend">
     			<span class="input-group-text">Post Title</span>
   			</div>

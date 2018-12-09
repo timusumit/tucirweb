@@ -16,7 +16,7 @@
 		<div class="col-lg-8 header_brand_wrap">
 			<div class="row">
 			<div class="col-2 logo_wrap">
-				<img class="img-fluid" src="<?php echo base_url('site_assets/');?>images/logo.png" title="Tribhuwan University" alt="TULOGO">
+				<a href="<?php echo base_url(); ?>"><img class="img-fluid" src="<?php echo base_url('site_assets/');?>images/logo.png" title="Tribhuwan University" alt="TULOGO"></a>
 			</div>
 			<div class="col logo_text_wrap">
 				<h4>Tribhuwan University</h4>

@@ -21,7 +21,7 @@ class Create_post_model extends CI_Model {
             'post_content'=>$this->input->post('post_content'),
             'post_author'=>$this->input->post('post_author'),
             'post_date'=> date('M j, Y'),
-            'post_status'=>"unpublished",
+            'post_type'=>$this->input->post('post_type'),
            
 
         );

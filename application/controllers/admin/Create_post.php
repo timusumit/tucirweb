@@ -31,6 +31,9 @@ public function do_upload()
 
                 $this->load->library('upload', $config);
                 $file=$this->upload->do_upload('userfile');
+                 $uploadedImage = $this->upload->data();
+   //    echo $uploadedImage['file_name'];exit;
+        $this->resizeImage($uploadedImage['file_name']);
 
                 if ( ! $file )
                 {
@@ -118,11 +121,13 @@ if($test==0)
         //  echo "i am here"; exit;      
         $create_post = $this->create_post_model->get_post_image_byid($post_id);
         $file_path=$create_post['post_image_url'];
+         $tn_path=$_SERVER['DOCUMENT_ROOT'] . '/tucirweb/site_assets/uploads/blog/thumbnail/'.$create_post['post_image_name'];
 
 
 //echo $file_path; exit;
 if(is_file($file_path)){
         unlink($file_path);
+         unlink($tn_path);
         echo 'File  has been deleted';
       } else {
         echo 'Could not delete file does not exist';
@@ -130,6 +135,41 @@ if(is_file($file_path)){
         $this->create_post_model->delete_post($post_id);        
         redirect( base_url() . 'admin/create_post');        
         }
+
+
+
+public function resizeImage($filename)
+   {
+   // echo "here";exit;
+      $source_path = $_SERVER['DOCUMENT_ROOT'] . '/tucirweb/site_assets/uploads/blog/'. $filename;
+    //  echo $source_path;exit;
+      $target_path = $_SERVER['DOCUMENT_ROOT'] . '/tucirweb/site_assets/uploads/blog/thumbnail/'.$filename;
+    //  echo $target_path;exit;
+      $config_manip = array(
+          'image_library' => 'gd2',
+          'source_image' => $source_path,
+          'new_image' => $target_path,
+          'maintain_ratio' => TRUE,
+          'create_thumb' => TRUE,
+          'thumb_marker' => '',
+          'width' => 155,
+          'height' => 120
+      );
+  //  print_r($config_manip);exit;
+
+
+      $this->load->library('image_lib', $config_manip);
+      /*echo "here";exit;*/
+   //   $this->image_lib->resize();
+      if (!$this->image_lib->resize()) {
+          echo $this->image_lib->display_errors();
+      }
+
+
+     $this->image_lib->clear();
+   }
+
+
 
 
 /* write above here */
