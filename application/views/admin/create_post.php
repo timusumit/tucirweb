@@ -59,6 +59,12 @@
           <option value="events">Events</option>
         </select>
     </div>
+    <div class="input-group mb-3" id="event_location" style="display: none;">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Event Location</span>
+        </div>
+        <input type="text"  class="form-control" name="event_location" id="event_location" value="Kathmandu" >
+    </div>
         <div class="input-group mb-3">
   			<div class="input-group-prepend">
     			<span class="input-group-text">Post Title</span>
@@ -95,8 +101,20 @@
 <?php echo form_close(); ?>
   </div>
 </div>
-<style>
-iframe{
-  height: 200px !important; width: 300px !important;
-}
-  </style>
+<script>
+   $('select[name="post_type"]').on('change', function() {
+    var post_type = $(this).val();
+         
+            switch (post_type) {
+            case "events":
+                $('#event_location').show();
+                break;
+            case "news":
+                $('#event_location').hide();
+                break;   
+            default:        
+                
+                }
+
+   });
+</script>

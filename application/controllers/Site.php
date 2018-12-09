@@ -15,6 +15,7 @@ public function __construct()
         $this->load->model('create_page_model');
         $this->load->model('menu_setup_model');
         $this->load->model('slider_setup_model');
+        $this->load->model('create_post_model');
     }
 
 	
@@ -24,6 +25,9 @@ public function __construct()
 		$data['menu_setup']=$this->menu_setup_model->get_page_from_menu();
 	 	$data['submenu']=$this->menu_setup_model->get_submenu_page();
 	 	$data['slider_setup']=$this->slider_setup_model->get_slider_image_name();
+	 	$data['get_news']=$this->create_post_model->get_news();
+	 	$data['get_news_list']=$this->create_post_model->get_news_list();
+	 	$data['get_events']=$this->create_post_model->get_events();
 		$this->load->view('site_templates/header.php');
 		$this->load->view('site_templates/navigation.php',$data);
 		$this->load->view($view,$data);

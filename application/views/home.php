@@ -70,16 +70,17 @@
 						<article class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 							<h4 class="bg_btn">Latest News</h4>
 							<div class="news_box_wrap">
-								<div class="col-lg-12 news_block_wrap">
+						<?php foreach($get_news_list as $key=>$data): ?>		
+							<div class="col-lg-12 news_block_wrap">
 							<div class="row">
 								<div class="col-4 pad_fix " ><img class="img_tn_news" src="<?php echo base_url('site_assets/');?>images/tn_news.JPG"></div>
-								<div class="col pad_fix"> <a href="#" class="news_title"><h6 class="text-justify text-bold text_ne ">Lorem Ipsum is simply dummy text of the printing and typesetting. </h6></a>
+								<div class="col pad_fix"> <a href="<?php echo base_url('post/news/'.$data['slug']) ?>" class="news_title"><h6 class="text-justify text-bold text_ne "><?php echo $data['post_title'] ?> </h6></a>
 									<span class="date_news">October 2, 2013</span>
-								</div>
-								
+								</div>								
 							</div>
 							<hr>
 							</div>
+						<?php endforeach; ?>
 							<div class="col-lg-12 news_block_wrap">
 							<div class="row">
 								<div class="col-4 pad_fix " ><img class="img_tn_news" src="<?php echo base_url('site_assets/');?>images/tn_news.JPG"></div>

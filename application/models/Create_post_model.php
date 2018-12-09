@@ -22,6 +22,7 @@ class Create_post_model extends CI_Model {
             'post_author'=>$this->input->post('post_author'),
             'post_date'=> date('M j, Y'),
             'post_type'=>$this->input->post('post_type'),
+            'event_location'=>$this->input->post('event_location'),
            
 
         );
@@ -85,6 +86,41 @@ public function get_post_content(){
         return $query->result_array();
 
         }
+public function get_events(){
+        $this->db->select('*');
+        $this->db->from('create_post');
+        $this->db->where('post_type','events');
+        $query=$this->db->get();
+        return $query->result_array();
+
+}
+
+public function get_news_list(){
+$this->db->select('*');
+        $this->db->from('create_post');
+       $this->db->where('post_type','news');
+        //$this->db->where('slug',$this->uri->segment(3));
+        $query=$this->db->get();
+       // print_r($query);exit;
+        return $query->result_array();
+}
+
+public function get_news(){
+$slug=$this->uri->segment(3);
+
+    $where = array(
+               'post_type' =>'news',
+               'slug' => $slug
+            );
+        $this->db->select('*');
+        $this->db->from('create_post');
+        $this->db->where($where);
+        //$this->db->where('slug',$this->uri->segment(3));
+        $query=$this->db->get();
+       // print_r($query);exit;
+        return $query->result_array();
+
+}
 
 
 
