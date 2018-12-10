@@ -50,7 +50,7 @@
       </div>
       <div class="modal-body">
        <div class="col-lg-12">
-       	<div class="input-group mb-3">
+       	<div class="input-group mb-2">
         <div class="input-group-prepend">
           <span class="input-group-text">Post Type</span>
         </div>
@@ -59,36 +59,42 @@
           <option value="events">Events</option>
         </select>
     </div>
-    <div class="input-group mb-3" id="event_location" style="display: none;">
+    <div class="input-group mb-2" id="event_location" style="display: none;">
         <div class="input-group-prepend">
           <span class="input-group-text">Event Location</span>
         </div>
         <input type="text"  class="form-control" name="event_location" id="event_location" value="Kathmandu" >
     </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-2">
   			<div class="input-group-prepend">
     			<span class="input-group-text">Post Title</span>
   			</div>
   			<input type="text"  class="form-control" name="post_title" id="post_title" >
 		</div>
-			<div class="input-group mb-3">
+			<div class="input-group mb-2">
   			<div class="input-group-prepend">
     			<span class="input-group-text">Content</span>
   			</div>
   			<textarea  class="form-control ckeditor" name="post_content" id="post_content" ></textarea>
 		</div>
-		<div class="input-group mb-3">
+    <div class="row">
+      <div class="col">
+		<div class="input-group mb-2">
   			<div class="input-group-prepend">
     			<span class="input-group-text">Author</span>
   			</div>
   			<input  class="form-control" name="post_author" id="author"  value="<?php echo ucfirst($titlename); ?>">
 		</div>
-		<div class="input-group mb-3">
+  </div>
+  <div class="col">
+		<div class="input-group mb-2">
   			<div class="input-group-prepend">
     			<span class="input-group-text">Image</span>
   			</div>
   			<input type="file" class="form-control" name="userfile" id="userfile" >
 		</div>
+  </div>
+  </div>
 
 
        </div>
@@ -116,7 +122,7 @@
       </div>
       <div class="modal-body">
        <div class="col-lg-12">
-        <div class="input-group mb-3">
+        <div class="input-group mb-2">
         <div class="input-group-prepend">
           <span class="input-group-text">Post Type</span>
         </div>
@@ -125,31 +131,31 @@
           <option value="events">Events</option>
         </select>
     </div>
-    <div class="input-group mb-3" id="event_location" style="display: none;">
+    <div class="input-group mb-2" id="event_location" style="display: none;">
         <div class="input-group-prepend">
           <span class="input-group-text">Event Location</span>
         </div>
         <input type="text"  class="form-control" name="event_location" id="event_location" value="Kathmandu" >
     </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-2">
         <div class="input-group-prepend">
           <span class="input-group-text">Post Title</span>
         </div>
         <input type="text"  class="form-control" name="post_title" id="post_title" >
     </div>
-      <div class="input-group mb-3">
+      <div class="input-group mb-2">
         <div class="input-group-prepend">
           <span class="input-group-text">Content</span>
         </div>
         <textarea  class="form-control ckeditor" name="post_content" id="post_content" ></textarea>
     </div>
-    <div class="input-group mb-3">
+    <div class="input-group mb-2">
         <div class="input-group-prepend">
           <span class="input-group-text">Author</span>
         </div>
         <input  class="form-control" name="post_author" id="author"  value="<?php echo ucfirst($titlename); ?>">
     </div>
-    <div class="input-group mb-3">
+    <div class="input-group mb-2">
         <div class="input-group-prepend">
           <span class="input-group-text">Image</span>
         </div>
