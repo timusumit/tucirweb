@@ -38,4 +38,9 @@ class Post extends CI_Controller {
         $data['get_news']=$this->create_post_model->get_news();
         $this->display('news',$data);
     }
+
+    public function events(){
+        $data['get_events']=$this->create_post_model->get_events();
+        $this->display('events',$data);
+    }
 }

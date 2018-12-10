@@ -16,12 +16,12 @@
         						<thead class="text-primary">
         							
                       <tr>
-        								 <th width="40%">Post Title</th><th width="15%">Content</th><th width="15%">Author</th><th width="15%">Image</th><th>Date</th><th width="15%">Action</th>
+        								 <th>Post Title</th><th>Post Type</th><th>Event Location</th><th>Content</th><th>Author</th><th>Image</th><th>Date</th><th width="15%">Action</th>
         							</tr>
         						</thead>
         						<tbody>
                       <?php foreach($create_post as $key=>$data): ?>
-        					<tr><td><?php echo $data['post_title'] ?></td><td><?php echo $data['post_content'] ?></td><td><?php echo $data['post_author'] ?></td><td>
+        					<tr><td><?php echo $data['post_title'] ?></td><td><?php echo $data['post_type'] ?></td><td><?php echo $data['event_location'] ?></td><td><?php echo $data['post_content'] ?></td><td><?php echo $data['post_author'] ?></td><td>
                   <?php if($data['post_image_name']!='no_image'){ ?>
                     <img style="width:80px;" src="<?php echo base_url('site_assets/uploads/blog/'.$data['post_image_name']) ?>">
                       <?php }?>

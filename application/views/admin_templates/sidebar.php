@@ -30,18 +30,18 @@ $classvalue=$this->uri->segment(2);
           </li>
 
 
-          <li class="nav-item  <?php if ($classvalue=='appointments') echo "active" ?>  ">
+        <!--   <li class="nav-item  <?php if ($classvalue=='appointments') echo "active" ?>  ">
             <a class="nav-link" href="<?php echo base_url('admin/appointments') ?>">
               <i class="material-icons">person</i>
               <p>Appointments</p>
             </a>
-          </li>
+          </li> -->
        
        
           <li class="nav-item   <?php if ($classvalue=='create_post') echo "active" ?>  ">
             <a class="nav-link" href="<?php echo base_url('admin/create_post') ?>">
               <i class="material-icons">library_books</i>
-              <p>Create Post(Blog)</p>
+              <p>Create Post(News/Events)</p>
             </a>
           </li>
             <li class="nav-item   <?php if ($classvalue=='create_page') echo "active" ?>  ">
@@ -91,14 +91,14 @@ $classvalue=$this->uri->segment(2);
             </div>
           </li>
 
-          <li class="nav-item ">
+         <li class="nav-item ">
             <a class="nav-link collapsed" data-toggle="collapse" href="#home_setup" aria-expanded="false">
               <i class="material-icons">home</i>
               <p> Home Setup
                 <b class="caret"></b>
               </p>
             </a>
-            <div class="collapse <?php if ($classvalue=='vmi_setup' or $classvalue=='services_setup')   echo "show"?>" id="home_setup" style="">
+            <div class="collapse <?php if ($classvalue=='vmi_setup' or $classvalue=='services_setup' or $classvalue=='social_setup' )   echo "show"?>" id="home_setup" style="">
               <ul class="nav">
 
                    <li class="nav-item <?php if ($classvalue=='services_setup') echo "active" ?> ">
@@ -111,6 +111,12 @@ $classvalue=$this->uri->segment(2);
                   <a class="nav-link" href="<?php echo base_url('admin/vmi_setup'); ?>">
                     <i class="material-icons">visibility</i>
                     <p>Vision/Mission/Importance</p>
+                  </a>
+                  </li>
+                  <li class="nav-item <?php if ($classvalue=='social_setup') echo "active" ?> ">
+                  <a class="nav-link" href="<?php echo base_url('admin/social_setup'); ?>">
+                    <i class="material-icons">facebook</i>
+                    <p>Social Setup</p>
                   </a>
                   </li>
                 
