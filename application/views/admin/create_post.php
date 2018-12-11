@@ -23,9 +23,9 @@
                       <?php foreach($create_post as $key=>$data): ?>
         					<tr><td><?php echo $data['post_title'] ?></td><td><?php echo $data['post_type'] ?></td><td><?php echo $data['event_location'] ?></td><td><?php echo $data['post_content'] ?></td><td><?php echo $data['post_author'] ?></td><td>
                   <?php if($data['post_image_name']!='no_image'){ ?>
-                    <img style="width:80px;" src="<?php echo base_url('site_assets/uploads/blog/'.$data['post_image_name']) ?>">
+                    <img style="width:80px;" src="<?php echo base_url('site_assets/uploads/blog/thumbnail/'.$data['post_image_name']) ?>">
                       <?php }?>
-                  </td><td><?php echo $data['post_date'] ?></td><td><a href="#" data-post_type="<?php echo $data['post_type'] ?>" data-post_id="<?php echo $data['post_id'] ?>" data-post_title="<?php echo $data['post_title'] ?>" data-event_location="<?php echo $data['event_location'] ?>" data-post_content="<?php echo htmlspecialchars($data['post_content']); ?>" data-post_author="<?php echo $data['post_author'] ?>" data-toggle="modal" data-target="#editModal" class="btn btn-warning btn-sm editpost">Edit</a>&nbsp;
+                  </td><td><?php echo $data['post_date'] ?></td><td><a href="#" data-post_type="<?php echo $data['post_type'] ?>" data-post_id="<?php echo $data['post_id'] ?>" data-post_title="<?php echo $data['post_title'] ?>" data-event_location="<?php echo $data['event_location'] ?>" data-post_content="<?php echo htmlspecialchars($data['post_content']); ?>" data-post_author="<?php echo $data['post_author'] ?>" data-toggle="modal" data-post_image_name="<?php echo $data['post_image_name'] ?>" data-post_image_url="<?php echo htmlspecialchars($data['post_image_url']) ?>" data-target="#editModal" class="btn btn-warning btn-sm editpost">Edit</a>&nbsp;
                     <a onclick="return confirm('Are you sure want to Delete?')" class="btn btn-danger btn-sm" href="<?php echo base_url('admin/create_post/delete/'.$data['post_id'])?>">Delete</a></td></tr>
                 <?php endforeach; ?>
                     </tbody>
@@ -91,7 +91,7 @@
   			<div class="input-group-prepend">
     			<span class="input-group-text">Image</span>
   			</div>
-  			<input type="file" class="form-control" name="userfile" id="userfile"  required="required" >
+  			<input type="file" class="form-control" name="userfile" id="userfile" >
 		</div>
   </div>
   </div>
@@ -121,7 +121,10 @@
             var event_location = $(this).data('event_location');
             var post_title= $(this).data('post_title');
             var post_content=$(this).data('post_content');  
-            var post_author=$(this).data('post_author');     
+            var post_author=$(this).data('post_author'); 
+            var post_image_name=$(this).data('post_image_name');
+            var post_image_url=$(this).data('post_image_url');  
+           // alert(post_image_url);  
           //  alert(post_author);     
             CKEDITOR.instances['post_content'].setData(post_content);/*yeti gare pugne maal*/
 
@@ -131,6 +134,9 @@
             $(".modal-body .input-group #post_content").val(post_content);            
             $(".modal-body .input-group #event_location").val(event_location);
             $(".modal-body .input-group #post_author").val(post_author);
+            $(".modal-body .input-group #post_image_name").val(post_image_name);
+            $(".modal-body .input-group #post_image_url").val(post_image_url);
+
             $("#editModal form").attr('action','create_post/edit/'+post_id);            
             $('#editModal').modal('show');
             
@@ -194,7 +200,9 @@
         <div class="input-group-prepend">
           <span class="input-group-text">Image</span>
         </div>
-        <input type="file" class="form-control" name="userfile" id="userfile"  required="required">
+        <input type="file" class="form-control" name="userfile" id="userfile"  >
+        <input type="text" style="display: none;" name="post_image_name" id="post_image_name" value="">
+        <input type="text" style="display: none;" name="post_image_url" id="post_image_url" value="">
     </div>
   </div>
   </div>

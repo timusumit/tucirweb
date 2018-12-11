@@ -51,8 +51,8 @@ if($test==0)
                 }
 
                         $data = array(
-                            'file_name' => 'no_image',
-                            'full_path' => 'not_found',
+                            'file_name' => 'no_image.jpg',
+                            'full_path' => 'no_path',
                     );                      
                         $this->create_post_model->set_post_image_name($post_id,$data['file_name'],$data['full_path']);
                         redirect('admin/create_post',$data);
