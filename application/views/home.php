@@ -124,58 +124,7 @@
 							</div>
 							<hr>
 						<?php endforeach;?>
-								<div class="row">
-								<div class="col-3 pad_fix " >
-									<div class="date_box">
-										<div class="date_part">
-											<span>21</span>
-										</div>
-										<div class="month_part">
-											<span>Nov</span>
-										</div>
-									</div>
-								</div>
-								<div class="col pad_fix"> <a href="#" class="news_title"><h6 class="text-justify text-bold text_ne ">Lorem Ipsum is simply dummy text. </h6></a>
-									<h6 class="date_event">October 2, 2013</h6>
-									<h6 class="location_event">T.U Auditorium</h6>
-								</div>								
-							</div>
-							<hr>
-							<div class="row">
-								<div class="col-3 pad_fix " >
-									<div class="date_box">
-										<div class="date_part">
-											<span>21</span>
-										</div>
-										<div class="month_part">
-											<span>Nov</span>
-										</div>
-									</div>
-								</div>
-								<div class="col pad_fix"> <a href="#" class="news_title"><h6 class="text-justify text-bold text_ne ">Lorem Ipsum is simply dummy text. </h6></a>
-									<h6 class="date_event">October 2, 2013</h6>
-									<h6 class="location_event">T.U Auditorium</h6>
-								</div>								
-							</div>
-							<hr>
-								<div class="row">
-								<div class="col-3 pad_fix " >
-									<div class="date_box">
-										<div class="date_part">
-											<span>21</span>
-										</div>
-										<div class="month_part">
-											<span>Nov</span>
-										</div>
-									</div>
-								</div>
-								<div class="col pad_fix"> <a href="#" class="news_title"><h6 class="text-justify text-bold text_ne ">Lorem Ipsum is simply dummy text. </h6></a>
-									<h6 class="date_event">October 2, 2013</h6>
-									<h6 class="location_event">T.U Auditorium</h6>
-								</div>								
-							</div>
-							<hr>
-						</div>
+								
 						<div class="row">
 								<div class="col-lg-12 text-center ">
 									<a href="#" class="btn btn_tu_blue">Read More</a>
