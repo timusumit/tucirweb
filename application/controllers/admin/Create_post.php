@@ -88,6 +88,25 @@ if($test==0)
 
 
       public function edit(){
+$post_id=$this->uri->segment(4);
+//echo $post_id;exit;
+  $create_post = $this->create_post_model->get_post_image_byid($post_id);
+        $file_path=$create_post['post_image_url'];
+         $tn_path=$_SERVER['DOCUMENT_ROOT'] . '/tucirweb/site_assets/uploads/blog/thumbnail/'.$create_post['post_image_name'];
+
+//echo $file_path;exit;
+//echo $file_path; exit;
+if(is_file($file_path)){
+        unlink($file_path);
+         unlink($tn_path);
+        echo 'File  has been deleted';
+      } else {
+        echo 'Could not delete file does not exist';
+      }
+       // $this->create_post_model->delete_post($post_id);        
+      //  redirect( base_url() . 'admin/create_post');    
+
+
             $this->do_upload();
         $ss_id = $this->uri->segment(4);
         
