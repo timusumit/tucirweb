@@ -136,7 +136,10 @@
             $(".modal-body .input-group #post_author").val(post_author);
             $(".modal-body .input-group #post_image_name").val(post_image_name);
             $(".modal-body .input-group #post_image_url").val(post_image_url);
-
+/*if(post_image_url!='no_path'){
+  alert('hey');
+  $(".modal-body .input-group #userfile").setAttribute("required","required");
+}*/
             $("#editModal form").attr('action','create_post/edit/'+post_id);            
             $('#editModal').modal('show');
             

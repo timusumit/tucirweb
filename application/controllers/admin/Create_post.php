@@ -103,26 +103,7 @@ if(is_file($file_path)){
       } else {
         echo 'Could not delete file does not exist';
       }
-       // $this->create_post_model->delete_post($post_id);        
-      //  redirect( base_url() . 'admin/create_post');    
-
-
             $this->do_upload();
-        $ss_id = $this->uri->segment(4);
-        
-        if (empty($ss_id))
-        {
-            echo "i two";exit;
-            show_404();
-        }
-         $this->load->helper('form');
-        $this->load->library('form_validation');
-
-    $data['sls'] = $this->create_post_model->get_post_image_byid($ss_id);
-    $titlename=$data['sls']['post_img_name'];
-    $data['create_post'] = $this->create_post_model->get_post_image_name();
-//echo "i reached here"; exit;
-           // $this->post_setup_model->set_post_name($ss_id,$titlename);
 
             redirect('admin/create_post');
          }
