@@ -34,9 +34,6 @@ public function do_upload()
 
                 if ( ! $file )
                 {
-/*
-                        $error = array('error' => $this->upload->display_errors());
-                        redirect('admin/create_page', $error);*/
 
 
 $test = $this->uri->segment(4);
@@ -52,11 +49,10 @@ if($test==0)
   
                 }
 
-                        $data = array(
-                            'file_name' => 'no_image',
-                            'full_path' => 'not_found',
-                    );                      
-                        $this->create_page_model->set_page_image_name($page_id,$data['file_name'],$data['full_path']);
+                        $create_page = $this->create_page_model->get_page_image_byid($page_id);
+                        $filename=$create_page['page_image_name'];
+                        $filepath=$create_page['page_image_url'];                       
+                        $this->create_page_model->set_page_image_name($page_id,$filename,$filepath);
                         redirect('admin/create_page',$data);
 
 
@@ -80,12 +76,15 @@ if($test==0)
                    $page_id = $this->uri->segment(4);
   
                 }
+                        $create_page = $this->create_page_model->get_page_image_byid($page_id);
+                        $old_file_path=$create_page['page_image_url'];
 
                         $data = array(
                             'file_name' => $this->upload->data('file_name'),
                             'full_path' => $this->upload->data('full_path'),
                     );                      
                        	$this->create_page_model->set_page_image_name($page_id,$data['file_name'],$data['full_path']);
+                        unlink($old_file_path);
                         redirect('admin/create_page',$data);
 
                 }
@@ -96,23 +95,6 @@ if($test==0)
 
       public function edit(){
             $this->do_upload();
-        $ss_id = $this->uri->segment(4);
-        
-        if (empty($ss_id))
-        {
-            echo "i two";exit;
-            show_404();
-        }
-         $this->load->helper('form');
-        $this->load->library('form_validation');
-
-    $data['sls'] = $this->create_page_model->get_page_image_byid($ss_id);
-    $titlename=$data['sls']['page_img_name'];
-    $data['create_page'] = $this->create_page_model->get_page_image_name();
-//echo "i reached here"; exit;
-           // $this->page_setup_model->set_page_name($ss_id,$titlename);
-
-            redirect('admin/create_page');
          }
 
 
