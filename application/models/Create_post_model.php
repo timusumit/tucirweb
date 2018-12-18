@@ -124,7 +124,22 @@ $slug=$this->uri->segment(3);
         return $query->result_array();
 
 }
+public function get_events(){
+$slug=$this->uri->segment(3);
 
+    $where = array(
+               'post_type' =>'events',
+               'slug' => $slug
+            );
+        $this->db->select('*');
+        $this->db->from('create_post');
+        $this->db->where($where);
+        //$this->db->where('slug',$this->uri->segment(3));
+        $query=$this->db->get();
+       // print_r($query);exit;
+        return $query->result_array();
+
+}
 
 
 
