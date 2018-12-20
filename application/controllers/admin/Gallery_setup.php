@@ -19,65 +19,31 @@ public function do_upload()
                 $config['upload_path']          = './site_assets/uploads/gallery';
                 $config['allowed_types']        = 'jpg|jpeg|png';
                 $config['file_name']='gallery';
-
-
                 $this->load->library('upload', $config);
                 $file=$this->upload->do_upload('userfile');
-
-
                 $uploadedImage = $this->upload->data();
-   //    echo $uploadedImage['file_name'];exit;
-        $this->resizeImage($uploadedImage['file_name']);
-
+                $this->resizeImage($uploadedImage['file_name']);
                 if ( ! $file )
                 {
-
-                        $error = array('error' => $this->upload->display_errors());
-                 //   echo "i am still here"; exit;
-                        redirect('admin/gallery_setup', $error);
+                    $error = array('error' => $this->upload->display_errors());
+                    redirect('admin/gallery_setup', $error);
 
                 }
                 else
                 {
-
-//$this->uri->segment(4) === FALSE;
-$test = $this->uri->segment(4);
-//echo $test; exit;
-if($test==0)
+                  $test = $this->uri->segment(4);
+                if($test==0)
                     {
                         $ss_id=0;
-                      // echo " i am here from add"; exit;
                     }
                 else {
-                    //echo "i am here from edit"; exit;
                    $ss_id = $this->uri->segment(4);
-                    
-                  //  echo "i am here from edit";exit;
+                      }
 
-                }
-
-
-                //    echo $this->uri->segmet(4); exit;
-                   // echo isset($ss_id); exit;
-                	//$ss_id = $this->uri->segmet(4);
-                  /* if(!isset())
-                    {
-                        $ss_id=0;
-                       echo " i am here from add"; exit;
-                    }
-                else {
-                    echo "i am here from edit"; exit;
-                    $ss_id=$this->uri->segmet(4);
-                  //  echo "i am here from edit";exit;
-
-                }*/
-
-
-                        $data = array(
+                    $data = array(
                             'file_name' => $this->upload->data('file_name'),
                             'full_path' => $this->upload->data('full_path'),
-                    );     
-                  //  print_r($data);exit;                  
+                    );                  
                        	$this->gallery_setup_model->set_gallery_name($ss_id,$data['file_name'],$data['full_path']);
                         redirect('admin/gallery_setup',$data);
 
@@ -142,10 +108,10 @@ public function index(){
 
  public function resizeImage($filename)
    {
-   // echo "here";exit;
+   
       $source_path = $_SERVER['DOCUMENT_ROOT'] . '/tucirweb/site_assets/uploads/gallery/'. $filename;
-    //  echo $source_path;exit;
-      $target_path = $_SERVER['DOCUMENT_ROOT'] . '/tucirweb/site_assets/uploads/gallery/'.$filename;
+      //echo $source_path;exit;
+      $target_path = $_SERVER['DOCUMENT_ROOT'] . '/tucirweb/site_assets/uploads/gallery/thumbnail/'.$filename;
     //  echo $target_path;exit;
       $config_manip = array(
           'image_library' => 'gd2',
@@ -154,19 +120,19 @@ public function index(){
           'maintain_ratio' => TRUE,
           'create_thumb' => TRUE,
           'thumb_marker' => '',
-          'width' => 1350,
-          'height' => 500
+          'width' => 120,
+          'height' => 70
       );
   //  print_r($config_manip);exit;
 
 
       $this->load->library('image_lib', $config_manip);
-      /*echo "here";exit;*/
+   //   echo "here";exit;
    //   $this->image_lib->resize();
       if (!$this->image_lib->resize()) {
+        echo "something went wrong!";
           echo $this->image_lib->display_errors();
       }
-
 
      $this->image_lib->clear();
    }
