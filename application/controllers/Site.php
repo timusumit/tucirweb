@@ -49,6 +49,11 @@ public function __construct()
 		$this->display('pages/contact',$data);
 	}
 
+	public function gallery(){
+		$data['page_description']='Gallery';
+		$this->display('pages/gallery',$data);
+	}
+
 	public function add_inquiry(){
     $this->inquiry_model->set_inquiry();
    	$this->session->set_flashdata('success_contact', 'Message Send Successfully.');
