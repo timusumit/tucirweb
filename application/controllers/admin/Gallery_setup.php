@@ -84,11 +84,14 @@ public function do_upload()
         //  echo "i am here"; exit;      
         $gallery_setup = $this->gallery_setup_model->get_gallery_image_byid($gallery_id);
         $file_path=$gallery_setup['gallery_image_url'];
+        $tn_path=$_SERVER['DOCUMENT_ROOT'] . '/tucirweb/site_assets/uploads/gallery/thumbnail/'.$gallery_setup['gallery_image_name'];
+        //echo $tn_path;exit;
 
 
 //echo $file_path; exit;
 if(is_file($file_path)){
         unlink($file_path);
+        unlink($tn_path);
         echo 'File  has been deleted';
       } else {
         echo 'Could not delete file does not exist';
