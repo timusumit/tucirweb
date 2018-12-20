@@ -6,10 +6,12 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
+<?php
+$is_current=$this->uri->segment(2);
+?>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item <?php if(empty($is_current)) echo "active"; ?>">
         <a class="nav-link" href="<?php echo base_url(); ?>">Home <span class="sr-only">(current)</span></a>
       </li>
       
@@ -35,8 +37,11 @@
         </div>
       <?php }?>
       </li>   
-<?php endforeach;?>   
-      <li class="nav-item">
+<?php endforeach;?>
+    <li class="nav-item <?php if($is_current=='gallery') echo "active" ?>">
+        <a class="nav-link" href="<?php echo base_url('site/gallery');?>">Gallery</a>
+      </li>   
+      <li class="nav-item <?php if($is_current=='contact') echo "active" ?>">
         <a class="nav-link" href="<?php echo base_url('site/contact');?>">Contact Us</a>
       </li>
     </ul>

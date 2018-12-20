@@ -22,7 +22,10 @@ public function do_upload()
                 $this->load->library('upload', $config);
                 $file=$this->upload->do_upload('userfile');
                 $uploadedImage = $this->upload->data();
+               // $this->resizeOriginal($uploadedImage['file_name']);
                 $this->resizeImage($uploadedImage['file_name']);
+                
+               
                 if ( ! $file )
                 {
                     $error = array('error' => $this->upload->display_errors());
@@ -49,6 +52,7 @@ public function do_upload()
 
                 }
         }
+        /*upload fn end*/
 
 
          public function edit(){
@@ -71,6 +75,8 @@ public function do_upload()
 
             redirect('admin/gallery_setup');
          }
+
+         /*edit fn end*/
 
 
     public function delete()
@@ -100,13 +106,16 @@ if(is_file($file_path)){
 
         $this->gallery_setup_model->delete_gallery($gallery_id);        
         redirect( base_url() . 'admin/gallery_setup');        
-        }
+    }
+    /*dele fn end*/
+
 
 public function index(){
 	$data['gallery_setup']=$this->gallery_setup_model->get_gallery_image_name();
 	$data['titlename']=$this->user_model->get_logged_user();
 	$this->display('admin/gallery_setup',$data);
 }
+/*index fn end*/
 
 
  public function resizeImage($filename)
@@ -140,6 +149,7 @@ public function index(){
      $this->image_lib->clear();
    }
 
+/*resize function end*/
 
 
 
