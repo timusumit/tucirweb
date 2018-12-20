@@ -58,7 +58,7 @@ $classvalue=$this->uri->segment(2);
                 <b class="caret"></b>
               </p>
             </a>
-            <div class="collapse <?php if ($classvalue=='slider_setup' or $classvalue=='contact_setup' or $classvalue=='menu_setup' or $classvalue=='submenu_setup')   echo "show"?>" id="pagesExamples" style="">
+            <div class="collapse <?php if ($classvalue=='slider_setup' or $classvalue=='contact_setup' or $classvalue=='menu_setup' or $classvalue=='submenu_setup' or $classvalue=='gallery_setup')   echo "show"?>" id="pagesExamples" style="">
               <ul class="nav">
                 <li class="nav-item <?php if ($classvalue=='menu_setup') echo "active" ?> ">
                   <a class="nav-link" href="<?php echo base_url('admin/menu_setup'); ?>">
@@ -79,6 +79,14 @@ $classvalue=$this->uri->segment(2);
                   <p>Slider Setup</p>
                   </a>
                 </li>
+
+                <li class="nav-item <?php if ($classvalue=='gallery_setup') echo "active" ?> ">
+                  <a class="nav-link" href="<?php echo base_url('admin/gallery_setup') ?>">
+                    <i class="material-icons">photos</i>
+                  <p>Gallery Setup</p>
+                  </a>
+                </li>
+
                 <li class="nav-item <?php if ($classvalue=='contact_setup') echo "active" ?> ">
                   <a class="nav-link" href="<?php echo base_url('admin/contact_setup'); ?>">
                     <i class="material-icons">location_ons</i>
