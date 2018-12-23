@@ -55,7 +55,11 @@
 						<h3>Introduction</h3>
 							<div class="row">
 							<figure class="col-lg-6 image-wrap col-sm-12 text-center">
-								<img class="img-fluid mx-auto " src="<?php echo base_url('site_assets/');?>images/intro.jpg">
+								<?php foreach($slider_setup as $key=>$data): ?>
+									<?php if($key==0){ ?>
+								<img style="height:185px;" class="img-fluid mx-auto m185 " src="<?php echo base_url('site_assets/uploads/slider/'.$data['slider_image_name']);?>">
+							<?php }?>
+							<?php endforeach; ?>
 							</figure>
 							<div class="col-lg-6 text-wrap col-sm-12 text-center">
 									<p class="text-justify ">
@@ -64,6 +68,16 @@
 									</p>
 							</div>
 							</div>
+					</article>
+					<article>
+						<h3>Our Objective</h3>
+						<div class="row">
+							<div class="col-lg-12">
+							<p class="text-justify">
+								
+							</p>
+						</div>
+						</div>
 					</article>
 					<aside class="row">
 						<h1 class="hidden">Latest News and Events</h1>

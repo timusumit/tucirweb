@@ -17,18 +17,19 @@
         						<thead class="text-primary">
         							
                       <tr>
-        								 <th width="30%">Vision</th><th width="30%%">Mission</th><th width="30%">Introduction</th><th width="10%">Action</th>
+        								 <!-- <th width="30%">Vision</th> --><th width="45%%">Introduction</th><th width="45%">Objective</th><th width="10%">Action</th>
         							</tr>
         						</thead>
         						<tbody>
         						<?php  foreach ($vmi_setup as $key=>$data):?>	
                       
                       <tr>
-        								<td>
+        							<!-- 	<td>
                           <textarea class="form-control" name="vision" id="vision"><?php echo $data['vision'] ?></textarea>           
-                          </td>
-                        <td><textarea class="form-control" name="mission" id="mission"><?php echo $data['mission'] ?></textarea> </td>
-                        <td><textarea class="form-control" name="introduction" id="introduction"><?php echo $data['introduction'] ?></textarea> </td>
+                          </td> -->
+                          <td><textarea class="form-control ckeditor" name="introduction" id="introduction"><?php echo $data['introduction'] ?></textarea> </td>
+                        <td><textarea class="form-control ckeditor" name="mission" id="mission"><?php echo $data['mission'] ?></textarea> </td>
+                        
                         <td><button type="submit" class="btn btn-success">UPDATE</buttom></td>
         							</tr>
         						<?php endforeach; ?>

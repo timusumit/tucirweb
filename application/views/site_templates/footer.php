@@ -30,6 +30,9 @@
 					<h4 class="bg_btn no_btm_margin">Contact Us</h4>
 					<div class="contact_box">
 					<ul class="contact_foot_link">
+						<li>Centre for International Relations</li>
+						<li>Tribhuvan University</li>
+						<li>Central Administrative Buliding, Kirtipur, Kathamndu</li>
 						<?php foreach($contact_setup as $csdata): ?>
 							<li><?php echo $csdata['address'] ?></li>
 							<li><?php echo $csdata['phone'] ?></li>

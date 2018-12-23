@@ -356,3 +356,6 @@ box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
 .mar_top_fix{
 	margin-top:0;
 }
+.introduction figure img.img-fluid.m185{
+	height: : 185px !important;
+}
