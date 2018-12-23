@@ -22,12 +22,12 @@ $classvalue=$this->uri->segment(2);
               <p>Dashboard</p>
             </a>
           </li>
-             <li class="nav-item  <?php if ($classvalue=='inquiry') echo "active" ?>  ">
+             <!-- <li class="nav-item  <?php if ($classvalue=='inquiry') echo "active" ?>  ">
             <a class="nav-link" href="<?php echo base_url('admin/inquiry') ?>">
               <i class="material-icons">help_outline</i>
               <p>Inquiry</p>
             </a>
-          </li>
+          </li> -->
 
 
         <!--   <li class="nav-item  <?php if ($classvalue=='appointments') echo "active" ?>  ">
@@ -38,27 +38,7 @@ $classvalue=$this->uri->segment(2);
           </li> -->
        
        
-          <li class="nav-item   <?php if ($classvalue=='create_post') echo "active" ?>  ">
-            <a class="nav-link" href="<?php echo base_url('admin/create_post') ?>">
-              <i class="material-icons">library_books</i>
-              <p>Create Post(News/Events)</p>
-            </a>
-          </li>
-
-
-            <li class="nav-item   <?php if ($classvalue=='create_pub') echo "active" ?>  ">
-            <a class="nav-link" href="<?php echo base_url('admin/create_pub') ?>">
-              <i class="material-icons">library_books</i>
-              <p>Add Publication</p>
-            </a>
-          </li>
-
-            <li class="nav-item   <?php if ($classvalue=='create_page') echo "active" ?>  ">
-            <a class="nav-link" href="<?php echo base_url('admin/create_page') ?>">
-              <i class="material-icons">file_copy</i>
-              <p>Create Page</p>
-            </a>
-          </li>
+          
         
         <li class="nav-item ">
             <a class="nav-link collapsed" data-toggle="collapse" href="#pagesExamples" aria-expanded="false">
@@ -142,7 +122,27 @@ $classvalue=$this->uri->segment(2);
             </div>
           </li>
 
+          <li class="nav-item   <?php if ($classvalue=='create_post') echo "active" ?>  ">
+            <a class="nav-link" href="<?php echo base_url('admin/create_post') ?>">
+              <i class="material-icons">library_books</i>
+              <p>Create Post(News/Events)</p>
+            </a>
+          </li>
 
+
+            <li class="nav-item   <?php if ($classvalue=='create_pub') echo "active" ?>  ">
+            <a class="nav-link" href="<?php echo base_url('admin/create_pub') ?>">
+              <i class="material-icons">library_books</i>
+              <p>Add Publication</p>
+            </a>
+          </li>
+
+            <li class="nav-item   <?php if ($classvalue=='create_page') echo "active" ?>  ">
+            <a class="nav-link" href="<?php echo base_url('admin/create_page') ?>">
+              <i class="material-icons">file_copy</i>
+              <p>Create Page</p>
+            </a>
+          </li>
 
 
 

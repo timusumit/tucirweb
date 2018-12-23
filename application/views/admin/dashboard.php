@@ -7,7 +7,7 @@
               <div class="card card-stats">
                 <div class="card-header card-header-warning card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">help_outline</i>
+                   <a href="<?php echo base_url('admin/inquiry'); ?>"> <i class="material-icons">help_outline</i></a>
                   </div>
                   <p class="card-category">Inquiries</p>
                   <h3 class="card-title"><?php $inquiryc=0; foreach ($inquiry as $key=>$data): 
