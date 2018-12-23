@@ -1,0 +1,10 @@
+create_publication:
+pub_id
+pub_title
+pub_content
+pub_author
+pub_image_name
+pub_image_url
+slug
+post_date
+

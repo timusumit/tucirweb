@@ -44,6 +44,15 @@ $classvalue=$this->uri->segment(2);
               <p>Create Post(News/Events)</p>
             </a>
           </li>
+
+
+            <li class="nav-item   <?php if ($classvalue=='create_pub') echo "active" ?>  ">
+            <a class="nav-link" href="<?php echo base_url('admin/create_pub') ?>">
+              <i class="material-icons">library_books</i>
+              <p>Add Publication</p>
+            </a>
+          </li>
+
             <li class="nav-item   <?php if ($classvalue=='create_page') echo "active" ?>  ">
             <a class="nav-link" href="<?php echo base_url('admin/create_page') ?>">
               <i class="material-icons">file_copy</i>
