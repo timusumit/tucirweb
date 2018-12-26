@@ -81,7 +81,6 @@
 </footer>
 
 
-<script src="<?php echo base_url('site_assets/');?>js/jquery-3.3.1.min.js"></script>
 <script src="<?php echo base_url('site_assets/');?>js/bootstrap.min.js"></script>
 <script src="<?php echo base_url('site_assets/') ?>color_box/js/jquery.colorbox.js"></script>
 <script>

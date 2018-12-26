@@ -49,6 +49,7 @@
     $('#appointment').DataTable();
     $('#inquiry').DataTable();
     $('#posts').DataTable();
+     $('.dtable').DataTable();
 
 
     });

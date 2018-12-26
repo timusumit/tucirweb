@@ -21,11 +21,11 @@
         						</thead>
         						<tbody>
                       <?php foreach($create_pub as $key=>$data): ?>
-        					<tr><td><?php echo $data['pub_title'] ?></td><td><?php echo $data['pub_type'] ?></td><td><?php echo $data['event_location'] ?></td><td><?php echo $data['pub_content'] ?></td><td><?php echo $data['pub_author'] ?></td><td>
+        					<tr><td><?php echo $data['pub_title'] ?></td><td><?php //echo //$data['pub_type'] ?></td><td><?php //echo //$data['event_location'] ?></td><td><?php echo $data['pub_content'] ?></td><td><?php echo $data['pub_author'] ?></td><td>
                   <?php if($data['pub_image_name']!='no_image'){ ?>
                     <img style="width:80px;" src="<?php echo base_url('site_assets/uploads/publication/thumbnail/'.$data['pub_image_name']) ?>">
                       <?php }?>
-                  </td><td><?php echo $data['pub_date'] ?></td><td><a href="#" data-pub_type="<?php echo $data['pub_type'] ?>" data-pub_id="<?php echo $data['pub_id'] ?>" data-pub_title="<?php echo $data['pub_title'] ?>" data-event_location="<?php echo $data['event_location'] ?>" data-pub_content="<?php echo htmlspecialchars($data['pub_content']); ?>" data-pub_author="<?php echo $data['pub_author'] ?>" data-toggle="modal" data-pub_image_name="<?php echo $data['pub_image_name'] ?>" data-pub_image_url="<?php echo htmlspecialchars($data['pub_image_url']) ?>" data-target="#editModal" class="btn btn-warning btn-sm editpub">Edit</a>&nbsp;
+                  </td><td><?php echo $data['pub_date'] ?></td><td><a href="#" data-pub_type="<?php //echo $data['pub_type'] ?>" data-pub_id="<?php echo $data['pub_id'] ?>" data-pub_title="<?php echo $data['pub_title'] ?>" data-event_location="<?php //echo $data['event_location'] ?>" data-pub_content="<?php echo htmlspecialchars($data['pub_content']); ?>" data-pub_author="<?php echo $data['pub_author'] ?>" data-toggle="modal" data-pub_image_name="<?php echo $data['pub_image_name'] ?>" data-pub_image_url="<?php echo htmlspecialchars($data['pub_image_url']) ?>" data-target="#editModal" class="btn btn-warning btn-sm editpub">Edit</a>&nbsp;
                     <a onclick="return confirm('Are you sure want to Delete?')" class="btn btn-danger btn-sm" href="<?php echo base_url('admin/create_pub/delete/'.$data['pub_id'])?>">Delete</a></td></tr>
                 <?php endforeach; ?>
                     </tbody>

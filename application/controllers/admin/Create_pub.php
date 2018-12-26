@@ -22,7 +22,7 @@ public function index(){
 public function do_upload()
         {
                 $config['upload_path']          = './site_assets/uploads/publication';
-                $config['allowed_types']        = 'jpg|jpeg|png|gif|svg';
+                $config['allowed_types']        = 'jpg|jpeg|png|gif|svg|pdf|doc|docx|xls|rtf|ppt|txt|xlsx|pptx';
                 $config['file_name']='publication_image';
               //  $config['overwrite']=TRUE;
 

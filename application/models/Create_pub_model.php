@@ -12,17 +12,17 @@ class Create_pub_model extends CI_Model {
         //echo $file_name;exit;
 
              $this->load->helper('url');
-        $slug = url_title($this->input->post('pub_title'), 'dash', TRUE);
+       // $slug = url_title($this->input->post('pub_title'), 'dash', TRUE);
         $data = array(
             'pub_image_name'=>$file_name,
             'pub_image_url'=>$full_path,
-            'slug'=>$slug,
+           // 'slug'=>$slug,
             'pub_title'=>$this->input->post('pub_title'),
             'pub_content'=>$this->input->post('pub_content'),
             'pub_author'=>$this->input->post('pub_author'),
             'pub_date'=> date('M j Y'),
-            'pub_type'=>$this->input->post('pub_type'),
-            'event_location'=>$this->input->post('event_location'),
+           // 'pub_type'=>$this->input->post('pub_type'),
+           // 'event_location'=>$this->input->post('event_location'),
            
 
         );

@@ -17,6 +17,7 @@ public function __construct()
         $this->load->model('slider_setup_model');
          $this->load->model('gallery_setup_model');
         $this->load->model('create_post_model');
+        $this->load->model('create_pub_model');
         $this->load->helper('text');
     }
 
@@ -31,6 +32,7 @@ public function __construct()
 	 	$data['get_news']=$this->create_post_model->get_news();
 	 	$data['get_news_list']=$this->create_post_model->get_news_list();
 	 	$data['get_events_list']=$this->create_post_model->get_events_list();
+	 	 $data['create_pub']=$this->create_pub_model->get_pub_image_name();
 		$this->load->view('site_templates/header.php');
 		$this->load->view('site_templates/navigation.php',$data);
 		$this->load->view($view,$data);
@@ -54,6 +56,11 @@ public function __construct()
 	public function gallery(){
 		$data['page_description']='Gallery';
 		$this->display('pages/gallery',$data);
+	}
+
+		public function publication(){
+		$data['page_description']='Publication';
+		$this->display('pages/publication',$data);
 	}
 
 	public function add_inquiry(){
