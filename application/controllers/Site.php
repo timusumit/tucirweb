@@ -62,6 +62,10 @@ public function __construct()
 		$data['page_description']='Publication';
 		$this->display('pages/publication',$data);
 	}
+	public function news(){
+		$data['page_description']='News';
+		$this->display('pages/news',$data);
+	}
 
 	public function add_inquiry(){
     $this->inquiry_model->set_inquiry();

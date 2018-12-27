@@ -38,6 +38,18 @@ $is_current=$this->uri->segment(2);
       <?php }?>
       </li>   
 <?php endforeach;?>
+    
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">News/Events</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="<?php echo base_url('site/news'); ?>">News</a>
+          <a class="dropdown-item" href="<?php echo base_url('site/publication'); ?>">Publication</a>
+        </div>
+      
+    </li>
+      
+
     <li class="nav-item <?php if($is_current=='gallery') echo "active" ?>">
         <a class="nav-link" href="<?php echo base_url('site/gallery');?>">Gallery</a>
       </li>   
