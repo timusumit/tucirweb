@@ -108,7 +108,7 @@
 							
 							<div class="row">
 								<div class="col-lg-12 text-center ">
-									<a href="#" class="btn btn_tu_blue">Read More</a>
+									<a href="<?php echo base_url('site/news'); ?>" class="btn btn_tu_blue">Read More</a>
 								</div>
 							</div>
 
@@ -116,24 +116,24 @@
 							</div>
 						</article>
 						<article class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-							<h4 class="bg_btn">Latest Event</h4>
+							<h4 class="bg_btn">Publication</h4>
 							<div class="event_box_wrap">
 								<div class="col-lg-12 news_block_wrap">
-						<?php foreach($get_events_list as $key=>$data): ?>		
+						<?php foreach($create_pub as $key=>$data): ?>		
 								<div class="row">
 								<div class="col-3 pad_fix " >
 									<div class="date_box">
 										<div class="date_part">
-											<span><?php $dates=explode(' ', $data['post_date']); echo $dates[1];?></span>
+											<span><?php $dates=explode(' ', $data['pub_date']); echo $dates[1];?></span>
 										</div>
 										<div class="month_part">
-											<span><?php $dates=explode(' ', $data['post_date']); echo $dates[0];?></span>
+											<span><?php $dates=explode(' ', $data['pub_date']); echo $dates[0];?></span>
 										</div>
 									</div>
 								</div>
-								<div class="col pad_fix"> <a href="#" class="news_title"><h6 class="text-justify text-bold text_ne "><?php echo $data['post_title'] ?> </h6></a>
-									<h6 class="date_event"><?php echo $data['post_date'] ?></h6>
-									<h6 class="location_event"><?php echo $data['event_location'] ?></h6>
+								<div class="col pad_fix"> <a href="<?php echo  $data['pub_image_url'] ?>" target="_blank" class="news_title"><h6 class="text-justify text-bold text_ne "><?php echo $data['pub_title'] ?> </h6></a>
+									<h6 class="date_event"><?php echo $data['pub_date'] ?></h6>
+									<!-- <h6 class="location_event"><?php echo $data['event_location'] ?></h6> -->
 								</div>								
 							</div>
 							<hr>
@@ -141,7 +141,7 @@
 								
 						<div class="row">
 								<div class="col-lg-12 text-center ">
-									<a href="#" class="btn btn_tu_blue">Read More</a>
+									<a href="<?php echo base_url('site/publication') ?>" class="btn btn_tu_blue">Read More</a>
 								</div>
 							</div>
 					</div>

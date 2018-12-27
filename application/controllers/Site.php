@@ -33,6 +33,7 @@ public function __construct()
 	 	$data['get_news_list']=$this->create_post_model->get_news_list();
 	 	$data['get_events_list']=$this->create_post_model->get_events_list();
 	 	 $data['create_pub']=$this->create_pub_model->get_pub_image_name();
+	 	 
 		$this->load->view('site_templates/header.php');
 		$this->load->view('site_templates/navigation.php',$data);
 		$this->load->view($view,$data);

@@ -25,52 +25,40 @@
 							<div class="news_box_wrap">
 								<div class="col-lg-12 news_block_wrap">
 							<div class="row">
-								<div class="col-4 pad_fix " ><img class="img_tn_news" src="<?php echo base_url('site_assets/');?>images/tn_news.JPG"></div>
-								<div class="col pad_fix"> <a href="#" class="news_title"><h6 class="text-justify text-bold text_ne ">Lorem Ipsum is simply dummy text of the printing and typesetting. </h6></a>
-									<span class="date_news">October 2, 2013</span>
-								</div>
 								
-							</div>
-							<hr>
-							</div>
+								<?php foreach($get_news_list as $key=>$data): ?>		
+							
 							<div class="col-lg-12 news_block_wrap">
 							<div class="row">
-								<div class="col-4 pad_fix " ><img class="img_tn_news" src="<?php echo base_url('site_assets/');?>images/tn_news.JPG"></div>
-								<div class="col pad_fix"> <a href="#" class="news_title"><h6 class="text-justify text-bold text_ne ">Lorem Ipsum is simply dummy text of the printing and typesetting. </h6></a>
-									<span class="date_news">October 2, 2013</span>
-								</div>
 								
+								<div class="col-4 pad_fix " >
+								<?php 	if($data['post_image_name']=='no_image'){?>
+									<img class="img_tn_news" src="<?php echo base_url('site_assets/uploads/blog/thumbnail/default_image.jpg');?>">
+								<?php  }else{ ?>
+									<img class="img_tn_news" src="<?php echo base_url('site_assets/uploads/blog/thumbnail/');?><?php echo $data['post_image_name']  ?>">
+								<?php }?>
+								</div>
+									
+								<div class="col pad_fix"> <a href="<?php echo base_url('post/news/'.$data['slug']) ?>" class="news_title"><h6 class="text-justify text-bold text_ne "><?php echo character_limiter($data['post_title'],65); ?> </h6></a>
+									<span class="date_news"><?php echo $data['post_date'] ?></span>
+								</div>								
 							</div>
 							<hr>
 							</div>
-								<div class="col-lg-12 news_block_wrap">
-							<div class="row">
-								<div class="col-4 pad_fix " ><img class="img_tn_news" src="<?php echo base_url('site_assets/');?>images/tn_news.JPG"></div>
-								<div class="col pad_fix"> <a href="#" class="news_title"><h6 class="text-justify text-bold text_ne ">Lorem Ipsum is simply dummy text of the printing and typesetting. </h6></a>
-									<span class="date_news">October 2, 2013</span>
-								</div>
-								
-							</div>
-							<hr>
-							</div>
-								<div class="col-lg-12 news_block_wrap">
-							<div class="row">
-								<div class="col-4 pad_fix " ><img class="img_tn_news" src="<?php echo base_url('site_assets/');?>images/tn_news.JPG"></div>
-								<div class="col pad_fix"> <a href="#" class="news_title"><h6 class="text-justify text-bold text_ne ">Lorem Ipsum is simply dummy text of the printing and typesetting. </h6></a>
-									<span class="date_news">October 2, 2013</span>
-								</div>
-								
-							</div>
-							<hr>
-							</div>
-							<div class="row">
+						
+						<?php endforeach; ?>
+
+
+							
 								<div class="col-lg-12 text-center ">
-									<a href="#" class="btn btn_tu_blue">Read More</a>
-								</div>
+									<a href="<?php echo base_url('site/news') ?>" class="btn btn_tu_blue">Read More</a>
+								
 							</div>
 
 
 							</div>
+						</div>
+					</div>
 						</article>
 						
 
