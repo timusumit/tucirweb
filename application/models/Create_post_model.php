@@ -108,6 +108,18 @@ $this->db->select('*');
         return $query->result_array();
 }
 
+public function get_news_inner(){
+$this->db->select('*');
+        $this->db->from('create_post');
+       $this->db->where('post_type','news');
+        //$this->db->where('slug',$this->uri->segment(3));
+     //   $this->db->limit(4);
+        $query=$this->db->get();
+
+       // print_r($query);exit;
+        return $query->result_array();
+}
+
 public function get_news(){
 $slug=$this->uri->segment(3);
 
