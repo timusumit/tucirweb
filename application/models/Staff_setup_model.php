@@ -16,9 +16,12 @@ class Staff_setup_model extends CI_Model {
         $data = array(
             'staff_image_name'=>$file_name,
             'staff_image_url'=>$full_path,
-            //'primary_staff_title'=>$this->input->post('primary_staff_title'),
-            'staff_title'=>$this->input->post('staff_title'),
-            'staff_subtitle'=>$this->input->post('staff_subtitle'),
+            //'primary_staff_name'=>$this->input->post('primary_staff_name'),
+            'staff_name'=>$this->input->post('staff_name'),
+            'staff_designation'=>$this->input->post('staff_designation'),
+            'staff_phone'=>$this->input->post('staff_phone'),
+            'staff_email'=>$this->input->post('staff_email'),
+
             /*'staff_btn_text'=>$this->input->post('staff_btn_text'),
             'staff_btn_link'=>$this->input->post('staff_btn_link'),
 */

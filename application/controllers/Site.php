@@ -15,9 +15,11 @@ public function __construct()
         $this->load->model('create_page_model');
         $this->load->model('menu_setup_model');
         $this->load->model('slider_setup_model');
-         $this->load->model('gallery_setup_model');
+        $this->load->model('gallery_setup_model');
+        $this->load->model('staff_setup_model');
         $this->load->model('create_post_model');
         $this->load->model('create_pub_model');
+        $this->load->model('vmi_setup_model');
         $this->load->helper('text');
     }
 
@@ -29,12 +31,13 @@ public function __construct()
 	 	$data['submenu']=$this->menu_setup_model->get_submenu_page();
 	 	$data['slider_setup']=$this->slider_setup_model->get_slider_image_name();
 	 	$data['gallery_setup']=$this->gallery_setup_model->get_gallery_image_name();
+	 	$data['staff_setup']=$this->staff_setup_model->get_staff_image_name();
 	 	$data['get_news']=$this->create_post_model->get_news();
 	 	$data['get_news_list']=$this->create_post_model->get_news_list();
 	 	$data['get_events_list']=$this->create_post_model->get_events_list();
-	 	 $data['create_pub']=$this->create_pub_model->get_pub_image_name();
-	 	 $data['news_for_inner']=$this->create_post_model->get_news_inner();
-	 	 
+	 	$data['create_pub']=$this->create_pub_model->get_pub_image_name();
+	 	$data['news_for_inner']=$this->create_post_model->get_news_inner();
+	 	$data['vmi_setup']=$this->vmi_setup_model->get_vmi();
 		$this->load->view('site_templates/header.php');
 		$this->load->view('site_templates/navigation.php',$data);
 		$this->load->view($view,$data);
@@ -67,6 +70,15 @@ public function __construct()
 	public function news(){
 		$data['page_description']='News';
 		$this->display('pages/news',$data);
+	}
+
+	public function introduction(){
+		$data['page_description']='introduction';
+		$this->display('pages/introduction',$data);
+	}
+	public function staff(){
+		$data['page_description']='staff';
+		$this->display('pages/staff',$data);
 	}
 
 	public function add_inquiry(){

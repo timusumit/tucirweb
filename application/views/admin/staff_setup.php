@@ -21,7 +21,7 @@
         						</thead>
         						<tbody>
                       <?php foreach ($staff_setup as $key=>$ss): ?>
-                      <tr><td><img  src="<?php echo base_url('site_assets/uploads/staff/thumbnail/'.$ss['staff_image_name']); ?>"></td><td><?php echo $ss['staff_image_url']?></td><td><?php echo $ss['staff_title']?></td><td><?php echo $ss['staff_subtitle']?></td><td><a onclick="return confirm('Are you sure you want to delete?')" href="<?php echo base_url('admin/staff_setup/delete/'.$ss['staff_id']); ?>" class="btn btn-danger">Delete</a></td></tr>
+                      <tr><td><img  src="<?php echo base_url('site_assets/uploads/staff/thumbnail/'.$ss['staff_image_name']); ?>"></td><td><?php echo $ss['staff_image_url']?></td><td><?php echo $ss['staff_name']?></td><td><?php echo $ss['staff_designation']?></td><td><a onclick="return confirm('Are you sure you want to delete?')" href="<?php echo base_url('admin/staff_setup/delete/'.$ss['staff_id']); ?>" class="btn btn-danger">Delete</a></td></tr>
                     <?php endforeach; ?>
                     </tbody>
         					</table>        			
@@ -53,16 +53,28 @@
 		</div>
 			<div class="input-group mb-3">
   			<div class="input-group-prepend">
-    			<span class="input-group-text">staff Title</span>
+    			<span class="input-group-text">Staff Name</span>
   			</div>
-  			<input  class="form-control" name="staff_title" id="staff_title" >
+  			<input  class="form-control" name="staff_name" id="staff_name" >
 		</div>
 		<div class="input-group mb-3">
   			<div class="input-group-prepend">
-    			<span class="input-group-text">staff Subtitle</span>
+    			<span class="input-group-text">Staff Designation</span>
   			</div>
-  			<input  class="form-control" name="staff_subtitle" id="staff_subtitle" required="" >
+  			<input  class="form-control" name="staff_designation" id="staff_designation" required="" >
 		</div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Staff Phone</span>
+        </div>
+        <input  class="form-control" name="staff_phone" id="staff_phone" required="" >
+    </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Staff Email</span>
+        </div>
+        <input  class="form-control" name="staff_email" id="staff_email" required="" >
+    </div>
        </div>
       </div>
       <div class="modal-footer">

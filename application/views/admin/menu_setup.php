@@ -81,6 +81,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text">Will it have Sub menu?</span>
         </div>
+        <input type="hidden" value="0" name="ms_has_sub">
         <input type="checkbox"  class="form-control" name="ms_has_sub" id="ms_has_sub" value="1" >
     </div>
 

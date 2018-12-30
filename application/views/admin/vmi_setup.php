@@ -6,8 +6,8 @@
                 	<div class="col-lg-12">
                 	<div class="card">
                     <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Vision, Mission, Importance Setup</h4>
-                  <p class="card-category">Setup The Vision, Mission, Importance Part Here!</p>
+                  <h4 class="card-title ">Vision, objective, Importance Setup</h4>
+                  <p class="card-category">Setup The Vision, objective, Importance Part Here!</p>
                 </div>
                 		<div class="card-body">
                       <div class="col-lg-12 text-right"></div>
@@ -28,7 +28,7 @@
                           <textarea class="form-control" name="vision" id="vision"><?php echo $data['vision'] ?></textarea>           
                           </td> -->
                           <td><textarea class="form-control ckeditor" name="introduction" id="introduction"><?php echo $data['introduction'] ?></textarea> </td>
-                        <td><textarea class="form-control ckeditor" name="mission" id="mission"><?php echo $data['mission'] ?></textarea> </td>
+                        <td><textarea class="form-control ckeditor" name="objective" id="objective"><?php echo $data['objective'] ?></textarea> </td>
                         
                         <td><button type="submit" class="btn btn-success">UPDATE</buttom></td>
         							</tr>

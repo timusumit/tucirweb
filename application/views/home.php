@@ -61,15 +61,19 @@
 							<?php }?>
 							<?php endforeach; ?>
 							</figure>
-							<div class="col-lg-6 text-wrap col-sm-12 text-center">
-									<p class="text-justify ">
-										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also.It has survived not only five centuries, but alsoIt.<br>
-										<a href="#" class="read_more_link">Read More</a>
-									</p>
+							<div class="col-lg-6 text-wrap col-sm-12 text-center text-justify">
+									
+									<?php foreach($vmi_setup as $key=>$data): ?>
+									
+										<?php echo character_limiter($data['introduction'],300) ?>
+										<a href="<?php echo base_url('site/introduction') ?>" class=" read_more_link">Read More</a> 
+									
+								<?php endforeach; ?>
+								
 							</div>
 							</div>
 					</article>
-					<article>
+					<!-- <article>
 						<h3>Our Objective</h3>
 						<div class="row">
 							<div class="col-lg-12">
@@ -78,7 +82,7 @@
 							</p>
 						</div>
 						</div>
-					</article>
+					</article> -->
 					<aside class="row">
 						<h1 class="hidden">Latest News and Events</h1>
 						<article class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -149,17 +153,19 @@
 
 					</aside>
 				</div>
-			<aside class="col-lg-4 text-center">
-					<div class="wrap-director">
-					<h3 class="text-center">Message From Director</h3>
-					<figure>
+			<aside class="col-lg-4 ">
+					<div class="wrap-director text-center">
+					<h3>Our Objective</h3><!-- message from director-->
+					<!-- <figure>
 						<img src="<?php echo base_url('site_assets/');?>images/director.jpg" class="rounded mx-auto d-block director_image" alt="Image Of Director">
 						<figcaption class="text-center">Nar Bahadur Gharti Magar<br>Managing Director</figcaption>						
-				</figure>
+				</figure> -->
+					<?php foreach($vmi_setup as $key=>$data): ?>
 					<p class="text-justify">
-						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. 
+						<?php echo $data['objective'] ?>
 					</p>
-					<a href="#" class="btn btn_tu_blue">Read More</a>
+					<?php endforeach; ?>
+					 <a href="<?php echo base_url('site/introduction') ?>" class="btn btn_tu_blue">Read More</a> 
 				</div>
 				<div class="wrap-gallery">
 				<h3 class="text-left bg_btn">Photo Gallery</h3>
@@ -170,7 +176,10 @@
   					</div>
 				</figure>
 				</div>
+
+				
 			</aside>
+
 
 
 		</div>

@@ -11,8 +11,8 @@ class Vmi_setup_model extends CI_Model {
 
     public function set_vmi(){
     	$data=array(
-    	'vision'=>$this->input->post('vision'),
-    	'mission'=>$this->input->post('mission'),
+    //	'vision'=>$this->input->post('vision'),
+    	'objective'=>$this->input->post('objective'),
     	'introduction'=>$this->input->post('introduction'),
     	);
       // print_r($data);exit;
