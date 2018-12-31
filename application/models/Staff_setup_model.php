@@ -21,6 +21,8 @@ class Staff_setup_model extends CI_Model {
             'staff_designation'=>$this->input->post('staff_designation'),
             'staff_phone'=>$this->input->post('staff_phone'),
             'staff_email'=>$this->input->post('staff_email'),
+            'is_hostel_staff'=>$this->input->post('is_hostel_staff'),
+            'staff_order'=>$this->input->post('staff_order'),
 
             /*'staff_btn_text'=>$this->input->post('staff_btn_text'),
             'staff_btn_link'=>$this->input->post('staff_btn_link'),
@@ -42,8 +44,9 @@ class Staff_setup_model extends CI_Model {
 
  public function get_staff_image_name(){
 	{
-       
-    $query = $this->db->get_where('staff_setup');
+    $this->db->where('is_hostel_staff',0);
+    $this->db->order_by('staff_order','ASC');
+    $query = $this->db->get('staff_setup');
     return $query->result_array();
     }
 }

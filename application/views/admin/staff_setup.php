@@ -61,19 +61,32 @@
   			<div class="input-group-prepend">
     			<span class="input-group-text">Staff Designation</span>
   			</div>
-  			<input  class="form-control" name="staff_designation" id="staff_designation" required="" >
+  			<input type="text"  class="form-control" name="staff_designation" id="staff_designation" required="" >
 		</div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">Staff Phone</span>
         </div>
-        <input  class="form-control" name="staff_phone" id="staff_phone" required="" >
+        <input type="text" class="form-control" name="staff_phone" id="staff_phone" required="" >
     </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">Staff Email</span>
         </div>
-        <input  class="form-control" name="staff_email" id="staff_email" required="" >
+        <input type="text" class="form-control" name="staff_email" id="staff_email" required="" >
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Is Hostel Staff?</span>
+        </div>
+         <input type="hidden" value="0" name="is_hostel_staff">
+        <input type="checkbox" class="form-control" name="is_hostel_staff" id="is_hostel_staff" value="1"  >
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Order</span>
+        </div>
+        <input type="text" class="form-control" name="staff_order" id="staff_order" required="" >
     </div>
        </div>
       </div>
