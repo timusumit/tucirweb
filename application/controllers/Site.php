@@ -20,6 +20,7 @@ public function __construct()
         $this->load->model('create_post_model');
         $this->load->model('create_pub_model');
         $this->load->model('vmi_setup_model');
+        $this->load->model('organization_setup_model');
         $this->load->helper('text');
     }
 
@@ -32,12 +33,14 @@ public function __construct()
 	 	$data['slider_setup']=$this->slider_setup_model->get_slider_image_name();
 	 	$data['gallery_setup']=$this->gallery_setup_model->get_gallery_image_name();
 	 	$data['staff_setup']=$this->staff_setup_model->get_staff_image_name();
+	 	$data['hostel_staff']=$this->staff_setup_model->get_hostel_staff();
 	 	$data['get_news']=$this->create_post_model->get_news();
 	 	$data['get_news_list']=$this->create_post_model->get_news_list();
 	 	$data['get_events_list']=$this->create_post_model->get_events_list();
 	 	$data['create_pub']=$this->create_pub_model->get_pub_image_name();
 	 	$data['news_for_inner']=$this->create_post_model->get_news_inner();
 	 	$data['vmi_setup']=$this->vmi_setup_model->get_vmi();
+	 	$data['organization_setup']=$this->organization_setup_model->get_organization();
 		$this->load->view('site_templates/header.php');
 		$this->load->view('site_templates/navigation.php',$data);
 		$this->load->view($view,$data);
@@ -79,6 +82,15 @@ public function __construct()
 	public function staff(){
 		$data['page_description']='staff';
 		$this->display('pages/staff',$data);
+	}
+	public function hostel(){
+		$data['page_description']='hostel';
+		$this->display('pages/hostel',$data);
+	}
+
+	public function organization(){
+		$data['page_description']='organization';
+		$this->display('pages/organization',$data);
 	}
 
 	public function add_inquiry(){

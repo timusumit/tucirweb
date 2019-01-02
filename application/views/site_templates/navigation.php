@@ -14,6 +14,15 @@ $is_current=$this->uri->segment(2);
       <li class="nav-item <?php if(empty($is_current)) echo "active"; ?>">
         <a class="nav-link" href="<?php echo base_url(); ?>">Home <span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">About Us</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="<?php echo base_url('site/staff'); ?>">Staff</a>
+          <a class="dropdown-item" href="<?php echo base_url('site/hostel'); ?>">Hostel</a>
+          <a class="dropdown-item" href="<?php echo base_url('site/organization'); ?>">Organization</a>
+        </div>
+      
+    </li>
       
       <?php foreach($menu_setup as $data): ?>
       <li class="nav-item <?php if($data['ms_has_sub']==1) echo "dropdown" ?>">
