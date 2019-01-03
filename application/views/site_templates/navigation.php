@@ -23,7 +23,9 @@ $is_current=$this->uri->segment(2);
         </div>
       
     </li>
-      
+      <li class="nav-item <?php if($is_current=='exchange_program') echo "active" ?>">
+        <a class="nav-link" href="<?php echo base_url('site/exchange_program');?>">Exchange Program</a>
+      </li>   
       <?php foreach($menu_setup as $data): ?>
       <li class="nav-item <?php if($data['ms_has_sub']==1) echo "dropdown" ?>">
 

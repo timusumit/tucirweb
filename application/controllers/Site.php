@@ -20,6 +20,7 @@ public function __construct()
         $this->load->model('create_post_model');
         $this->load->model('create_pub_model');
         $this->load->model('vmi_setup_model');
+        $this->load->model('student_setup_model');
         $this->load->model('organization_setup_model');
         $this->load->helper('text');
     }
@@ -41,6 +42,7 @@ public function __construct()
 	 	$data['news_for_inner']=$this->create_post_model->get_news_inner();
 	 	$data['vmi_setup']=$this->vmi_setup_model->get_vmi();
 	 	$data['organization_setup']=$this->organization_setup_model->get_organization();
+	 	$data['student_setup']=$this->student_setup_model->get_student_image_name();
 		$this->load->view('site_templates/header.php');
 		$this->load->view('site_templates/navigation.php',$data);
 		$this->load->view($view,$data);
@@ -91,6 +93,10 @@ public function __construct()
 	public function organization(){
 		$data['page_description']='organization';
 		$this->display('pages/organization',$data);
+	}
+	public function exchange_program(){
+		$data['page_description']='Exchange Program';
+		$this->display('pages/exchange-program',$data);
 	}
 
 	public function add_inquiry(){
