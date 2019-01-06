@@ -23,9 +23,25 @@ $is_current=$this->uri->segment(2);
         </div>
       
     </li>
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Affiliation</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="<?php echo base_url('site/institution_affiliation'); ?>">Institution Affilitaion</a>
+          <a class="dropdown-item" href="<?php echo base_url('site/student_affiliation'); ?>">Student Affiliation</a>
+          <a class="dropdown-item" href="<?php echo base_url('site/guideline'); ?>">Guidelines for Affiliation</a>
+        </div>
+      
+    </li>
+      
       <li class="nav-item <?php if($is_current=='exchange_program') echo "active" ?>">
         <a class="nav-link" href="<?php echo base_url('site/exchange_program');?>">Exchange Program</a>
-      </li>   
+      </li>
+
+      <li class="nav-item <?php if($is_current=='partnership') echo "active" ?>">
+        <a class="nav-link" href="<?php echo base_url('site/partnership');?>">Partnership</a>
+      </li>
+
       <?php foreach($menu_setup as $data): ?>
       <li class="nav-item <?php if($data['ms_has_sub']==1) echo "dropdown" ?>">
 

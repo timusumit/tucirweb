@@ -22,7 +22,10 @@ public function __construct()
         $this->load->model('vmi_setup_model');
         $this->load->model('student_setup_model');
         $this->load->model('organization_setup_model');
+        $this->load->model('guideline_setup_model');
+        $this->load->model('partnership_setup_model');
         $this->load->model('institute_affiliation_model');
+        $this->load->model('student_affiliation_model');
         $this->load->helper('text');
     }
 
@@ -43,8 +46,11 @@ public function __construct()
 	 	$data['news_for_inner']=$this->create_post_model->get_news_inner();
 	 	$data['vmi_setup']=$this->vmi_setup_model->get_vmi();
 	 	$data['organization_setup']=$this->organization_setup_model->get_organization();
+	 	$data['guideline_setup']=$this->guideline_setup_model->get_guideline();
+	 	$data['partnership_setup']=$this->partnership_setup_model->get_partnership();
 	 	$data['student_setup']=$this->student_setup_model->get_student_image_name();
 	 	$data['institute_affiliation']=$this->institute_affiliation_model->get_ia();
+	 	$data['student_affiliation']=$this->student_affiliation_model->get_sa();
 		$this->load->view('site_templates/header.php');
 		$this->load->view('site_templates/navigation.php',$data);
 		$this->load->view($view,$data);
@@ -100,7 +106,24 @@ public function __construct()
 		$data['page_description']='Exchange Program';
 		$this->display('pages/exchange-program',$data);
 	}
+	public function institution_affiliation(){
+		$data['page_description']='';
+		$this->display('pages/institute_affiliation',$data);
+	}
+	public function student_affiliation(){
+		$data['page_description']='';
+		$this->display('pages/student_affiliation',$data);
+	}
+	public function guideline(){
+		$data['page_description']='';
+		$this->display('pages/guideline',$data);
+	}
 
+public function partnership(){
+		$data['page_description']='';
+		$this->display('pages/partnership',$data);
+	}
+	
 	public function add_inquiry(){
     $this->inquiry_model->set_inquiry();
    	$this->session->set_flashdata('success_contact', 'Message Send Successfully.');

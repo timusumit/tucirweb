@@ -170,9 +170,12 @@
 				<div class="wrap-gallery">
 				<h3 class="text-left bg_btn">Photo Gallery</h3>
 				<figure class="img-gallery-box">
-					<img class="img-fluid img-gallery" src="<?php echo base_url('site_assets/');?>images/gallery.jpg" alt="Image Name">
+					<?php foreach ($gallery_setup as $key=>$data): ?>
+						<?php if ($key==0){ ?>
+					<img class="img-fluid img-gallery" src="<?php echo base_url('site_assets/');?>uploads/gallery/<?php echo $data['gallery_image_name'] ?>" alt="Image Name">
+				<?php } endforeach; ?>
 					 <div class="middle">
-    					<div class="text"><a href="#" class="btn btn_tu_blue">View More</a></div>
+    					<div class="text"><a href="<?php echo base_url('site/gallery') ?>" class="btn btn_tu_blue">View More</a></div>
   					</div>
 				</figure>
 				</div>

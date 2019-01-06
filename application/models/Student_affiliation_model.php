@@ -16,6 +16,7 @@ class Student_affiliation_model extends CI_Model {
         'sa_duration'=>$this->input->post('sa_duration'),
     	'sa_degree'=>$this->input->post('sa_degree'),
         'sa_topics'=>$this->input->post('sa_topics'),
+        'sa_department'=>$this->input->post('sa_department'),
     	);
        // print_r($data);exit;
 

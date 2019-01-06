@@ -6,8 +6,8 @@
                 	<div class="col-lg-12">
                 	<div class="card">
                     <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Services Setup</h4>
-                  <p class="card-Topics">Setup The services Part Here!</p>
+                  <h4 class="card-title ">Student Affiliation</h4>
+                  <p class="card-Topics">Setup Student Affiliation Part Here!</p>
                 </div>
                 		<div class="card-body">
                       <div class="col-lg-12 text-right"><a href="#" data-target="#addModal" data-toggle="modal" class="btn btn-success">ADD</a></div>
@@ -44,7 +44,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add services</h5>
-        <button degree="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -61,32 +61,65 @@
   			<div class="input-group-prepend">
     			<span class="input-group-text">Name</span>
   			</div>
-  			<input degree="text"  class="form-control " name="sa_name" id="sa_name" >
+  			<input type="text"  class="form-control " name="sa_name" id="sa_name" >
 		</div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">Duration</span>
         </div>
-        <input degree="text"  class="form-control " name="sa_duration" id="sa_duration" >
+        <input type="text"  class="form-control " name="sa_duration" id="sa_duration" >
     </div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">Degree</span>
         </div>
-        <input degree="text"  class="form-control " name="sa_degree" id="sa_degree" >
+        <input type="text"  class="form-control " name="sa_degree" id="sa_degree" >
     </div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">Topics</span>
         </div>
-        <input degree="text"  class="form-control "name="sa_topics" id="sa_topics">
+        <input type="text"  class="form-control "name="sa_topics" id="sa_topics">
+        
+    </div>
+     <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Department</span>
+        </div>
+        <select class="form-control "name="sa_department" id="sa_department">
+<option value="Centre for Nepal and Asian Studies (CNAS) ">Centre for Nepal and Asian Studies (CNAS) </option>
+<option value="Research Centre for Applied Science and Technology (RECAST)">Research Centre for Applied Science and Technology (RECAST) </option>
+<option value="Research Centre for Educational Innovation and Development (CERID)">Research Centre for Educational Innovation and Development (CERID) </option>
+<option value="Centre for Economic Development and Administration (CEDA)">Centre for Economic Development and Administration (CEDA) </option>
+<option value="Institute of Medicine (IOM)">Institute of Medicine (IOM) </option>
+<option value="Faculty of Management">Faculty of Management</option>
+<option value="Faculty of Law ">Faculty of Law </option>
+<option value="Centre for International Relations">Centre for International Relations </option>
+<option value="Central Department of Geography">Central Department of Geography </option>
+<option value="Central Department of Sociology/Anthropology">Central Department of Sociology/Anthropology </option>
+<option value="Central Department of Rural Development Studies ">Central Department of Rural Development Studies </option>
+<option value="Central Department of Nepalese History, Culture and Archaeology">Central Department of Nepalese History, Culture and Archaeology </option>
+<option value="Central Department of Economics">Central Department of Economics </option>
+<option value="Music Department, Padma Kanya Campus">Music Department, Padma Kanya Campus</option>
+<option value="Department of Geology, Tri-chandra Campus">Department of Geology, Tri-chandra Campus</option>
+<option value="Central Department of Political Science">Central Department of Political Science</option>
+<option value="Central Department of Education">Central Department of Education</option>
+<option value="Central Department of Psychology">Central Department of Psychology</option>
+<option value="Research Division">Research Division</option>
+<option value="Central Department of Population Studies">Central Department of Population Studies</option>
+<option value="Central Department of Microbiology">Central Department of Microbiology</option>
+<option value="Central Department of English">Central Department of English</option>
+<option value="Central Department of Buddhist Studies">Central Department of Buddhist Studies</option> 
+<option value="Central Department of Hydrology & Meteorology">Central Department of Hydrology & Meteorology</option>
+<option value="Central Department of Linguistics">Central Department of Linguistics</option>
+        </select>
         
     </div>
 		</div>
       </div>
       <div class="modal-footer">
-        <button degree="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button degree="submit" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
     </div>
 <?php echo form_close(); ?>
@@ -133,7 +166,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Edit services</h5>
-        <button degree="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -150,31 +183,38 @@
         <div class="input-group-prepend">
           <span class="input-group-text">name</span>
         </div>
-        <input degree="text"  class="form-control " name="sa_name" id="sa_name" >
+        <input type="text"  class="form-control " name="sa_name" id="sa_name" >
     </div>
      <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">duration</span>
         </div>
-        <input degree="text"  class="form-control " name="sa_duration" id="sa_duration" >
+        <input type="text"  class="form-control " name="sa_duration" id="sa_duration" >
     </div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">degree</span>
         </div>
-        <input degree="text"  class="form-control " name="sa_degree" id="sa_degree" >
+        <input type="text"  class="form-control " name="sa_degree" id="sa_degree" >
     </div>
    <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">Topics</span>
         </div>
-        <input degree="text"  class="form-control "name="sa_topics" id="sa_topics">
+        <input type="text"  class="form-control "name="sa_topics" id="sa_topics">
+        
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Department</span>
+        </div>
+        <input type="text"  class="form-control "name="sa_department" id="sa_department">
         
     </div>
     </div>
       </div>
       <div class="modal-footer">
-        <button degree="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button degree="submit" class="btn btn-primary">Save changes</button>
       </div>
     </div>

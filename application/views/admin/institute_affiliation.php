@@ -6,8 +6,8 @@
                 	<div class="col-lg-12">
                 	<div class="card">
                     <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Services Setup</h4>
-                  <p class="card-category">Setup The services Part Here!</p>
+                  <h4 class="card-title ">Institute Affilitaion</h4>
+                  <p class="card-category">Setup Institute Affiliation Part Here!</p>
                 </div>
                 		<div class="card-body">
                       <div class="col-lg-12 text-right"><a href="#" data-target="#addModal" data-toggle="modal" class="btn btn-success">ADD</a></div>
