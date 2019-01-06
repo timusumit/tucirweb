@@ -18,28 +18,33 @@
 		<div class="row">
 			
 
-			<div class="col-12">
+			<div class="col-lg-6 col-md-12">
 			<h3>Outgoing Students</h3>
 <table class="table table-striped table-bordered table-hover dtable">
-	<thead><tr><th>Title</th><th>Published Date</th></tr></thead>
+	<thead><tr><th></th><th>Student</th><th>University</th></tr></thead>
 	<tbody>
 		<?php foreach ($student_setup as $key=>$data): ?>
+		<?php if($data['student_type']=='outgoing'){ ?>
 		<tr>
-			<td width="80%">	<a href="#" target="_blank"><?php echo $data['student_name'] ?></a></td><td width="20%"><?php echo $data['student_college'] ?></td>
+			<td><img src="<?php echo base_url('site_assets/uploads/student/thumbnail/'.$data['student_image_name']) ?>"></td>
+			<td>	<?php echo $data['student_name'] ?></td><td><?php echo $data['student_college'] ?></td>
 			</tr>
+<?php } ?>
 				<?php endforeach; ?>
 			</tbody>	
 		</table>	
 			</div>
-			<div class="col-12">
+			<div class="col-lg-6 col-md-12">
 			<h3>Incoming Students</h3>
 <table class="table table-striped table-bordered table-hover dtable">
-	<thead><tr><th>Title</th><th>Published Date</th></tr></thead>
+	<thead><tr><th></th><th>Student</th><th>University</th></tr></thead>
 	<tbody>
 		<?php foreach ($student_setup as $key=>$data): ?>
-		<tr>
-			<td width="80%">	<a href="<?php echo base_url('site_assets/uploads/publication/'.$data['pub_image_name']) ?>" target="_blank"><?php echo $data['pub_title'] ?></a></td><td width="20%"><?php echo $data['pub_date'] ?></td>
+			<?php if($data['student_type']=='incoming'){ ?>
+		<tr><td><img src="<?php echo base_url('site_assets/uploads/student/thumbnail/'.$data['student_image_name']) ?>"></td>
+			<td>	<?php echo $data['student_name'] ?></td><td><?php echo $data['student_college'] ?></td>
 			</tr>
+		<?php } ?>
 				<?php endforeach; ?>
 			</tbody>	
 		</table>	
