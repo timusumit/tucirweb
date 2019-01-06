@@ -69,6 +69,23 @@
         </div>
         <input type="text"  class="form-control " name="ia_validity" id="ia_validity" >
     </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Type</span>
+        </div>
+        <input type="text"  class="form-control " name="ia_type" id="ia_type" >
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Category</span>
+        </div>
+        <select  class="form-control " name="ia_cat" id="ia_cat" >
+          <option value="new_bilaterial">New Bilaterial</option>
+          <option value="home_institution">Home Institution</option>
+          <<option value="institution_affiliation">Institution Affiliation</option>}
+          option
+        </select>
+    </div>
 		</div>
       </div>
       <div class="modal-footer">
@@ -89,12 +106,18 @@
             var ia_id = $(this).data('ia_id');
             var ia_country= $(this).data('ia_country');
             var ia_university=$(this).data('ia_university');
+            var ia_validity=$(this).data('ia_validity');
+            var ia_type=$(this).data('ia_type');
+            var ia_cat=$(this).data('ia_cat');
            
            
             
 
             $(".modal-body .input-group #ia_country").val(ia_country);
-            $(".modal-body .input-group #ia_university").val(ia_university);            
+            $(".modal-body .input-group #ia_university").val(ia_university);   
+            $(".modal-body .input-group #ia_validity").val(ia_validity); 
+            $(".modal-body .input-group #ia_type").val(ia_type); 
+            $(".modal-body .input-group #ia_cat").val(ia_cat);          
            
           
             $("#editModal form").attr('action','institute_affiliation/edit/'+ia_id);            
@@ -138,6 +161,23 @@
           <span class="input-group-text">Validity</span>
         </div>
         <input type="text"  class="form-control " name="ia_validity" id="ia_validity" >
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Type</span>
+        </div>
+        <input type="text"  class="form-control " name="ia_type" id="ia_type" >
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Category</span>
+        </div>
+        <select  class="form-control " name="ia_cat" id="ia_cat" >
+          <option value="new_bilaterial">New Bilaterial</option>
+          <option value="home_institution">Home Institution</option>
+          <<option value="institution_affiliation">Institution Affiliation</option>}
+          option
+        </select>
     </div>
     </div>
       </div>

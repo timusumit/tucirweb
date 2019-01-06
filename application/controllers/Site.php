@@ -44,7 +44,7 @@ public function __construct()
 	 	$data['vmi_setup']=$this->vmi_setup_model->get_vmi();
 	 	$data['organization_setup']=$this->organization_setup_model->get_organization();
 	 	$data['student_setup']=$this->student_setup_model->get_student_image_name();
-	 	$data['institute_affiliation']=$this->institute_affiliation_model->get_student_image_name();
+	 	$data['institute_affiliation']=$this->institute_affiliation_model->get_ia();
 		$this->load->view('site_templates/header.php');
 		$this->load->view('site_templates/navigation.php',$data);
 		$this->load->view($view,$data);

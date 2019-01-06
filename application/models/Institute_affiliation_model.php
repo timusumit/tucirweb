@@ -14,7 +14,8 @@ class Institute_affiliation_model extends CI_Model {
     	'ia_country'=>$this->input->post('ia_country'),
     	'ia_university'=>$this->input->post('ia_university'),
         'ia_validity'=>$this->input->post('ia_validity'),
-    	
+    	'ia_type'=>$this->input->post('ia_type'),
+        'ia_cat'=>$this->input->post('ia_cat'),
     	);
        // print_r($data);exit;
 

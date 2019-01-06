@@ -47,7 +47,7 @@ $classvalue=$this->uri->segment(2);
                 <b class="caret"></b>
               </p>
             </a>
-            <div class="collapse <?php if ($classvalue=='slider_setup' or $classvalue=='contact_setup' or $classvalue=='menu_setup' or $classvalue=='submenu_setup' or $classvalue=='gallery_setup')   echo "show"?>" id="pagesExamples" style="">
+            <div class="collapse <?php if ($classvalue=='slider_setup' or $classvalue=='contact_setup' or $classvalue=='menu_setup' or $classvalue=='submenu_setup' or $classvalue=='gallery_setup' or $classvalue=='staff_setup')   echo "show"?>" id="pagesExamples" style="">
               <ul class="nav">
                 <li class="nav-item <?php if ($classvalue=='menu_setup') echo "active" ?> ">
                   <a class="nav-link" href="<?php echo base_url('admin/menu_setup'); ?>">
@@ -82,6 +82,12 @@ $classvalue=$this->uri->segment(2);
                     <p>Contact Setup</p>
                   </a>
                   </li>
+                   <li class="nav-item <?php if ($classvalue=='staff_setup') echo "active" ?> ">
+                  <a class="nav-link" href="<?php echo base_url('admin/staff_setup'); ?>">
+                    <i class="material-icons">person</i>
+                    <p>Staff Setup</p>
+                  </a>
+                  </li>
                  
                                  
               </ul>
@@ -95,7 +101,7 @@ $classvalue=$this->uri->segment(2);
                 <b class="caret"></b>
               </p>
             </a>
-            <div class="collapse <?php if ($classvalue=='vmi_setup' or $classvalue=='services_setup' or $classvalue=='social_setup' or $classvalue=='student_setup' )   echo "show"?>" id="home_setup" style="">
+            <div class="collapse <?php if ($classvalue=='vmi_setup' or $classvalue=='services_setup' or $classvalue=='social_setup' or $classvalue=='student_setup' or $classvalue=='organization_setup')   echo "show"?>" id="home_setup" style="">
               <ul class="nav">
 
                    <li class="nav-item <?php if ($classvalue=='services_setup') echo "active" ?> ">
@@ -120,6 +126,12 @@ $classvalue=$this->uri->segment(2);
                   <a class="nav-link" href="<?php echo base_url('admin/social_setup'); ?>">
                     <i class="material-icons">facebook</i>
                     <p>Social Setup</p>
+                  </a>
+                  </li>
+                  <li class="nav-item <?php if ($classvalue=='organization_setup') echo "active" ?> ">
+                  <a class="nav-link" href="<?php echo base_url('admin/organization_setup'); ?>">
+                    <i class="material-icons">settings</i>
+                    <p>Organization Setup</p>
                   </a>
                   </li>
                 
