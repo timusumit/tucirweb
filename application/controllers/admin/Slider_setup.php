@@ -17,7 +17,7 @@ public function do_upload()
 
 
                 $config['upload_path']          = './site_assets/uploads/slider';
-                $config['allowed_types']        = 'jpg|jpeg|png';
+                $config['allowed_types']        = 'jpg|jpeg|png|gif';
                 $config['file_name']='slider';
 
 

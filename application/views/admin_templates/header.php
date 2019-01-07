@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="<?php echo base_url('admin_assets'); ?>/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+  <link href="<?php echo base_url('admin_assets'); ?>/css/styleadmin.css" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="<?php echo base_url('admin_assets'); ?>/demo/demo.css" rel="stylesheet" />
   <script src="<?php echo base_url('admin_assets'); ?>/js/core/jquery.min.js" type="text/javascript"></script>
