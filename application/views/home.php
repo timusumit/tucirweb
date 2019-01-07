@@ -135,7 +135,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col pad_fix"> <a href="<?php echo  $data['pub_image_url'] ?>" target="_blank" class="news_title"><h6 class="text-justify text-bold text_ne "><?php echo $data['pub_title'] ?> </h6></a>
+								<div class="col pad_fix"> <a href="<?php echo  base_url('site_assets/uploads/publication/'.$data['pub_image_name']) ?>" target="_blank" class="news_title"><h6 class="text-justify text-bold text_ne "><?php echo $data['pub_title'] ?> </h6></a>
 									<h6 class="date_event"><?php echo $data['pub_date'] ?></h6>
 									<!-- <h6 class="location_event"><?php echo $data['event_location'] ?></h6> -->
 								</div>								
