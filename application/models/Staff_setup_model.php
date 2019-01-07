@@ -51,6 +51,14 @@ class Staff_setup_model extends CI_Model {
     
 }
 
+
+public function get_all_staff(){
+    $this->db->order_by('staff_order', 'ASC');
+    $query=$this->db->get('staff_setup');
+    return $query->result_array();
+
+}
+
  public function get_hostel_staff(){
     
     $this->db->where('is_hostel_staff',1);

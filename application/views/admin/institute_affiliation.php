@@ -16,16 +16,16 @@
         						<thead class="text-primary">
         							
                       <tr>
-        								 <th width="15%">Country</th><th width="40%">University</th><th width="15%">Action</th>
+        								 <th width="15%">Country</th><th width="40%">University</th><th>Validity</th><th>Action</th>
         							</tr>
         						</thead>
         						<tbody>
         						<?php  foreach ($institute_affiliation as $key=>$data):?>	
                       
                       <tr>
-        								<td><?php echo $data['ia_country'] ?></td><td><?php echo $data['ia_university'] ?></td><td>
+        								<td><?php echo $data['ia_country'] ?></td><td><?php echo $data['ia_university'] ?></td><td><?php echo $data['ia_validity'] ?></td><td>
 
-                          <a href="#" class="btn btn-sm btn-warning editServices" data-target="#editModal" data-ia_id="<?php echo $data['ia_id'] ?>" data-ia_country="<?php echo $data['ia_country'] ?>" data-ia_university="<?php echo $data['ia_university'] ?>" data-toggle="modal">Edit</a>&nbsp;<a onclick="return confirm('Are you sure you want to delete?')" class="btn btn-sm btn-danger" href="<?php echo base_url('admin/institute_affiliation/delete/'.$data['ia_id']); ?>">Delete</a></td>
+                          <a href="#" class="btn btn-sm btn-warning editServices" data-target="#editModal" data-ia_id="<?php echo $data['ia_id'] ?>" data-ia_validity="<?php echo $data['ia_validity'] ?>" data-ia_country="<?php echo $data['ia_country'] ?>"  data-ia_cat="<?php echo $data['ia_cat'] ?>" data-ia_type="<?php echo $data['ia_type'] ?>" data-ia_university="<?php echo $data['ia_university'] ?>" data-toggle="modal">Edit</a>&nbsp;<a onclick="return confirm('Are you sure you want to delete?')" class="btn btn-sm btn-danger" href="<?php echo base_url('admin/institute_affiliation/delete/'.$data['ia_id']); ?>">Delete</a></td>
         							</tr>
         						<?php endforeach; ?>
                     </tbody>

@@ -23,12 +23,12 @@
 			<h3>Student Affiliation</h3>
 			<p>List of Foreign Researchers affiliated to Tribhuvan University / Total 90 foreign researchers from 21 countries are affiliated to Tribhuvan University July 2014 to December 2014</p>
 <table class="table table-striped table-bordered table-hover dtable">
-	<thead><tr><th>S.N</th><th>Name of Researcher</th><th>Country</th><th>Degree</th><th>Topics</th><th>Duration</th></tr></thead>
+	<thead><tr><th>S.N</th><th>Name of Researcher</th><th>Country</th><th>Degree</th><th>Topics</th><th>Duration</th><th>Department</th></tr></thead>
 	<tbody>
 		<?php foreach ($student_affiliation as $key=>$data): ?>
 			
 		<tr><td><?php echo $key+1 ?></td>
-			<td>	<?php echo $data['sa_name'] ?></td><td><?php echo $data['sa_country'] ?></td><td><?php echo $data['sa_degree'] ?></td><td><?php echo $data['sa_topics'] ?></td><td><?php echo $data['sa_duration'] ?></td>
+			<td>	<?php echo $data['sa_name'] ?></td><td><?php echo $data['sa_country'] ?></td><td><?php echo $data['sa_degree'] ?></td><td><?php echo $data['sa_topics'] ?></td><td><?php echo $data['sa_duration'] ?></td><td><?php echo $data['sa_department'] ?></td>
 			</tr>
 		
 				<?php endforeach; ?>

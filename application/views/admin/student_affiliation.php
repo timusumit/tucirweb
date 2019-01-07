@@ -16,16 +16,20 @@
         						<thead class="text-primary">
         							
                       <tr>
-        								 <th width="15%">Country</th><th width="40%">name</th><th width="15%">Action</th>
+        								 <th>Department</th><th>Researcher's Name</th><th>Country</th><th>Degree</th><th>Topics</th><th>Duration</th><th>Action</th>
         							</tr>
         						</thead>
         						<tbody>
         						<?php  foreach ($student_affiliation as $key=>$data):?>	
                       
                       <tr>
-        								<td><?php echo $data['sa_country'] ?></td><td><?php echo $data['sa_name'] ?></td><td>
-
-                          <a href="#" class="btn btn-sm btn-warning editServices" data-target="#editModal" data-sa_id="<?php echo $data['sa_id'] ?>" data-sa_country="<?php echo $data['sa_country'] ?>" data-sa_name="<?php echo $data['sa_name'] ?>" data-toggle="modal">Edit</a>&nbsp;<a onclick="return confirm('Are you sure you want to delete?')" class="btn btn-sm btn-danger" href="<?php echo base_url('admin/student_affiliation/delete/'.$data['sa_id']); ?>">Delete</a></td>
+                        <td><?php echo $data['sa_department'] ?></td>
+        								<td><?php echo $data['sa_name'] ?></td><td><?php echo $data['sa_country'] ?></td>
+                          <td><?php echo $data['sa_degree'] ?></td>
+                          <td><?php echo $data['sa_topics'] ?></td>
+                          <td><?php echo $data['sa_duration'] ?></td>
+                          <td>
+                          <a href="#" class="btn btn-sm btn-warning editServices" data-target="#editModal" data-sa_id="<?php echo $data['sa_id'] ?>" data-sa_degree="<?php echo $data['sa_degree'] ?>" data-sa_topics="<?php echo $data['sa_topics'] ?>" data-sa_duration="<?php echo $data['sa_duration'] ?>" data-sa_department="<?php echo $data['sa_department'] ?>" data-sa_country="<?php echo $data['sa_country'] ?>" data-sa_name="<?php echo $data['sa_name'] ?>" data-toggle="modal">Edit</a>&nbsp;<a onclick="return confirm('Are you sure you want to delete?')" class="btn btn-sm btn-danger" href="<?php echo base_url('admin/student_affiliation/delete/'.$data['sa_id']); ?>">Delete</a></td>
         							</tr>
         						<?php endforeach; ?>
                     </tbody>
@@ -138,6 +142,7 @@
             var sa_duration=$(this).data('sa_duration');
             var sa_degree=$(this).data('sa_degree');
             var sa_topics=$(this).data('sa_topics');
+            var sa_department=$(this).data('sa_department');
            
            
             
@@ -146,7 +151,8 @@
             $(".modal-body .input-group #sa_name").val(sa_name);   
             $(".modal-body .input-group #sa_duration").val(sa_duration); 
             $(".modal-body .input-group #sa_degree").val(sa_degree); 
-            $(".modal-body .input-group #sa_topics").val(sa_topics);          
+            $(".modal-body .input-group #sa_topics").val(sa_topics);   
+            $(".modal-body .input-group #sa_department").val(sa_department);         
            
           
             $("#editModal form").attr('action','student_affiliation/edit/'+sa_id);            

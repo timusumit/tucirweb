@@ -26,6 +26,7 @@ public function __construct()
         $this->load->model('partnership_setup_model');
         $this->load->model('institute_affiliation_model');
         $this->load->model('student_affiliation_model');
+         $this->load->model('social_setup_model');
         $this->load->helper('text');
     }
 
@@ -51,6 +52,7 @@ public function __construct()
 	 	$data['student_setup']=$this->student_setup_model->get_student_image_name();
 	 	$data['institute_affiliation']=$this->institute_affiliation_model->get_ia();
 	 	$data['student_affiliation']=$this->student_affiliation_model->get_sa();
+	 	$data['social_setup']=$this->social_setup_model->get_social();
 		$this->load->view('site_templates/header.php');
 		$this->load->view('site_templates/navigation.php',$data);
 		$this->load->view($view,$data);

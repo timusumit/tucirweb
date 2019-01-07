@@ -40,9 +40,11 @@
 						<?php endforeach; ?>
 					</ul>
 					<ul class="social_links">
-						<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href=""><i class="fab fa-twitter"></i></a></li>
-						<li><a href=""><i class="fab fa-youtube"></i></a></li>
+						<?php foreach($social_setup as $key=>$data):?>						
+						<li><a target="_blank" href="http://www.facebook.com/<?php echo $data['facebook'];  ?>"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a  target="_blank" href="http://www.twitter.com/<?php echo $data['twitter'];  ?>"><i class="fab fa-twitter"></i></a></li>
+						<li><a  target="_blank" href="http://www.youtube.com/<?php echo $data['youtube'];  ?>"><i class="fab fa-youtube"></i></a></li>
+						<?php endforeach; ?>
 					</ul>
 				</div>
 				</div>

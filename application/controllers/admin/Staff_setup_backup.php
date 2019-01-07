@@ -11,7 +11,7 @@ class Staff_setup extends Admin_controller{
 	}
 
 
-/*public function do_upload()
+public function do_upload()
         {
 
 
@@ -51,66 +51,7 @@ class Staff_setup extends Admin_controller{
                         redirect('admin/staff_setup',$data);
 
                 }
-        }*/
-
-
-public function do_upload()
-        {
-                $config['upload_path']          = './site_assets/uploads/staff';
-                $config['allowed_types']        = 'jpg|jpeg|png|gif|svg';
-                $config['file_name']='staff_image';
-              //  $config['overwrite']=TRUE;
-
-                $this->load->library('upload', $config);
-                $file=$this->upload->do_upload('userfile');
-                $uploadedImage = $this->upload->data();
-                $this->resizeImage($uploadedImage['file_name']);
-               /* if file is not chosen*/
-                if ( ! $file )
-                {
-                    $test = $this->uri->segment(4);
-                    if($test==0)
-                        {
-                          $staff_id=0;
-                        }
-                    else{
-                          $staff_id = $this->uri->segment(4);
-                        }
-
-                      $staff_setup = $this->staff_setup_model->get_staff_image_byid($staff_id);
-                      $filename=$staff_setup['staff_image_name'];
-                      $filepath=$staff_setup['staff_image_url'];             
-                            $this->staff_setup_model->set_staff_name($staff_id,$filename,$filepath);
-                      redirect('admin/staff_setup',$data);
-                }
-                /* if file is chosen */
-                else
-                {
-                  $test = $this->uri->segment(4);
-                  if($test==0)
-                      {
-                          $staff_id=0;
-                      }
-                  else{
-                        $staff_id = $this->uri->segment(4);
-                      }
-                        $staff_setup = $this->staff_setup_model->get_staff_image_byid($staff_id);
-                        $old_file_path=$staff_setup['staff_image_url'];
-                        $old_tn_path=$_SERVER['DOCUMENT_ROOT'] . '/tucirweb/site_assets/uploads/staff/thumbnail/'.$staff_setup['staff_image_name'];
-                        
-                        $data = array(
-                            'file_name' => $this->upload->data('file_name'),
-                            'full_path' => $this->upload->data('full_path'),
-                                      );                      
-                        $this->staff_setup_model->set_staff_name($staff_id,$data['file_name'],$data['full_path']);
-                        
-                        unlink($old_file_path);
-                        unlink($old_tn_path);
-                        redirect('admin/staff_setup',$data);
-
-                }
         }
-
         /*upload fn end*/
 
 
